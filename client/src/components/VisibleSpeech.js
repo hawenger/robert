@@ -1,9 +1,10 @@
 import React from 'react';
+import SpeechMoodSort from './SpeechMoodSort.js';
 
 export default function VisibleSpeech(props) {
     return (
         <div className="VisibleSpeech">
-            <h1>VISIBLE</h1>
+            <SpeechMoodSort {...props}/>
         </div>
     )
 }
