@@ -1,40 +1,22 @@
 import React, { useState, useEffect } from "react";
-import DeveloperContext from "./utils/DeveloperContext";
-import DeveloperInfo from "./components/Developer";
-import * as API from "./utils/API";
+import RobertScene from "./components/RobertScene";
+import SpeechScene from "./components/SpeechScene";
 
 import "./App.css";
 
-function App() {
-  const [developerState, setDeveloperState] = useState({
-    mood:"",
-    actions:"",
-    userid:0,
-    returning: false,
-    speechbubbletext:"",
-    buttontext:""
-  });
+function App(props) {
 
-  useEffect(() => {
-    // For demonstration purposes, we mock an API call.
-    API.checkInUser.then((res) => {
-      setDeveloperState(res);
-    });
-  }, []);
-
-
-
+  const userId = props.userId;
+  const returning = props.returning;
+  const mood = props.mood;
+  const actions = props.actions;
+  const speechText= props.speechText;
+  const buttonText= props.buttonText;
+  const talking = props.talking;
   return (
-    <div className="App">
-      <div className="App-header">
-        <h2>Welcome to React</h2>
-      </div>
-      <DeveloperContext.Provider value={developerState}>
-      <DeveloperInfo />
-      </DeveloperContext.Provider>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+    <div className="wrapper">
+      <RobertScene talking={true} {...props}/>
+      <SpeechScene talking={true} {...props}/>
     </div>
   );
 }
