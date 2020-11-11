@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import RobertScene from "./components/RobertScene";
 import SpeechScene from "./components/SpeechScene";
 
@@ -9,30 +9,47 @@ import "./App.css";
 
 function App() {
 
-const [users, setusers] = useState(null);
+  const [user, setUserState] = useState({userId:"1234", returning:true});
+  const [robert, setRobertState] = useState({mood:"greeting", actions:""});
+  const [speechBubble, setSpeechState] = useState({talking:false, speechText:["CIAO"]});
+  const [buttons, setButtonState] = useState({buttonText:["HELLO", "GOODBYE"]});
 
-  useEffect(() => {
-    if(!users) {
-      getusers();
-    }
-  })
+  //useEffect(() => {
+  //  if(!robert) {
+  //   getmoods();
+  //}
+  //})
 
-  const getusers = async () => {
-    let res = await robertService.getAllUser();
+  const getmoods = async () => {
+    let res = await robertService.getAllMood();
     console.log(res);
-    const x = res.find(element => element.userId = "1234")
-    console.log(x)
-    setusers(res);
-  }
+    let randomMood= res[Math.floor(Math.random()*res.length)];
+    console.log(randomMood);
+    //user.returning = randomMood.returning;
+    speechBubble.talking = randomMood.talking;
+    speechBubble.speechText = randomMood.innerText;
+    console.log(robert);
+    //.map(element => element.userId)
+    //console.log(x)
+    setRobertState({mood: randomMood.mood, actions: randomMood.action});
+    setSpeechState({talking: randomMood.talking, speechText: randomMood.innerText});
+    }
+    //getmoods();
+//const [users, setusers] = useState(null);
+  //setState(userid, x);
 
-  const user = {userId:"1234", returning:true};
-  const robert = {mood:"helpful", actions:""};
-  const speechBubble = {talking:true, speechText:"Hello"};
-  const buttons = {buttonText:["YES", "NO"]}
+  //const getusers = async () => {
+  //  let res = await robertService.getAllUser();
+  //  console.log(res);
+  //  const x = res.map(element => element.userId)
+  //  console.log(x)
+  //  setState(user.userId, x);
+  //}
   return (
     <div className="wrapper">
       <RobertScene talking={true}/>
       <SpeechScene robert = {robert} speechBubble = {speechBubble} user = {user} buttons = {buttons}/>
+      <button onClick={getmoods}>Hello Robert</button>
     </div>
   );
 
