@@ -20,6 +20,8 @@ const [users, setusers] = useState(null);
   const getusers = async () => {
     let res = await robertService.getAllUser();
     console.log(res);
+    const x = res.find(element => element.userId = "1234")
+    console.log(x)
     setusers(res);
   }
 

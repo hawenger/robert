@@ -87,6 +87,15 @@ module.exports = (app) => {
     return res.status(200).send(users);
   });
 
+  app.get(`/api/user/:userId`, async (req, res) => {
+    const {userId} = req.params
+    let user = await User.findByUserId(userId, req.body);
+    return res.status(202).send({
+      error:false,
+      user
+    });
+  });
+
   app.post(`/api/user`, async (req, res) => {
     let user = await User.create(req.body);
     return res.status(201).send({
