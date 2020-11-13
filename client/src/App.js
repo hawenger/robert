@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import "./App.css";
+import "./Robert.css";
 import robertService from './services/robertService';
 import RobertSpeech from './components/RobertSpeech';
+import RobertsBody from './components/RobertsBody';
 
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
   return (
     <div className="wrapper">
       <div className="RobertContainer">
+        <RobertsBody/>
       </div>
       <div className= "SpeechContainer">
         <RobertSpeech returning={returning}/>

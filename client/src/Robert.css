@@ -1,0 +1,535 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.grid {
+    display: flex;
+}
+
+.subgrid {
+    margin-top: 4em;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin-bottom: 1em;
+}
+
+.subgrid-1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/*HEAD*/
+
+.subgrid-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.planter-head-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 20px -1px 0px 0px #427e62, -1px -20px 0px 0px #427e62, -20px 2px 0px 0px #427e62, -20px -10px 0px 20px #427e62;
+}
+
+.sub-head-1 {
+    grid-column: span 1;
+    grid-row: span 7;
+}
+
+.sub-head-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+    border-radius: 50%;
+}
+
+.sub-head-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-6 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-7 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-8 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-9 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-10 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-11 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-12 {
+    grid-column: span 1;
+    grid-row: span 7;
+}
+
+.sub-head-13 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-14 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-15 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-16 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-17 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-18 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-19 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-20 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-21 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-22 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-23 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-24 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-25 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/*PLANT EYEBALL*/
+
+.sub-head-26 {
+    grid-column: span 4;
+    grid-row: span 4;
+}
+
+.eyeball-grid {
+    display: grid;
+    grid-template-columns: .5fr 3fr .5fr;
+    grid-template-rows: .5fr 3fr .5fr;
+    height: 100%;
+    width: 100%;
+}
+
+.eyeball-sub-1 {
+    grid-column: span 1;
+    grid-row: span 3;
+}
+
+.eyeball-sub-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.eyeball-sub-3 {
+    grid-column: span 1;
+    grid-row: span 3;
+}
+
+
+/*Eyeball*/
+
+.eyeball-sub-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.eyeball {
+    height: 5em;
+    width: 5em;
+    background-color: #4A8C6D;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.eyelid {
+    height: 2.5em;
+    width: 3.5em;
+    background-color: white;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-top: .5em solid#3D735A;
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pupil {
+    height: 1em;
+    width: 1em;
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.eyeball-sub-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/*PLANT MOUTH*/
+
+.sub-head-v {
+    grid-column: span 4;
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.mouth-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+    grid-template-rows: 1 fr;
+    height: 2em;
+    width: 6em;
+    border-top-right-radius: 5em;
+    border-top-left-radius: 5em;
+    border-bottom-right-radius: 4em;
+    border-bottom-left-radius: 4em;
+    background: #519977;
+    border: .3em solid #3D735A;
+}
+
+.sub-mouth-1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/*FANG-LEFT*/
+
+.sub-mouth-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.left-fang {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: 1.5em;
+    border-bottom-right-radius: .5em;
+    border-top-right-radius: .5em;
+}
+
+
+/*FANG-RIGHT*/
+
+.sub-mouth-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.right-fang {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: 1.5em;
+    border-top-left-radius: .5em;
+}
+
+.sub-mouth-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-w {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-x {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.sub-head-y {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/*ACTIVITY TBD GRID*/
+
+.subgrid-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.activity-grid {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+}
+
+.activity-box-title {
+    grid-column: span 3;
+    grid-row: span 1;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    display: none;
+}
+
+h3 {
+    font-size: .5em;
+    text-align: center;
+    display: none;
+}
+
+.activity-box-activity {
+    grid-column: span 3;
+    grid-row: span 1;
+    display: none;
+}
+
+.activity-box {
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+    display: none;
+}
+
+.subgrid-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/*BODY*/
+
+.subgrid-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.planter-body-grid {
+    display: grid;
+    grid-template-columns: 5fr 1fr 5fr;
+    grid-template-rows: 2fr 2fr 1fr 3fr;
+    height: 100%;
+    width: 100%;
+}
+
+.sub-planter-body-1 {
+    grid-column: span 1;
+    grid-row: span 4;
+}
+
+
+/*PLANT STEM*/
+
+.sub-planter-body-2 {
+    grid-column: span 1;
+    grid-row: span 4;
+}
+
+.plant-stem {
+    background-color: #4A8C6D;
+    background: hsla(152, 31%, 42%, 1);
+    background: linear-gradient(225deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 1) 100%);
+    background: -moz-linear-gradient(225deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 1) 100%);
+    background: -webkit-linear-gradient(225deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A8C6D", endColorstr="#3B7057", GradientType=1);
+    height: 100%;
+    width: 100%;
+    border-radius: .1em;
+}
+
+.sub-planter-body-3 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+
+/*PLANT LEAF*/
+
+.sub-planter-body-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.plant-leaf {
+    background-color: #4A8C6D;
+    background: hsla(152, 31%, 42%, 1);
+    background: linear-gradient(90deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 0.3) 80%);
+    background: -moz-linear-gradient(90deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 0.3) 80%);
+    background: -webkit-linear-gradient(90deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 0.3) 80%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A8C6D", endColorstr="#3B7057", GradientType=1);
+    border-bottom-right-radius: 2em;
+    border-top-left-radius: 1em;
+    height: 100%;
+    width: 25%;
+}
+
+.sub-planter-body-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.subgrid-6 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.subgrid-7 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+
+/*BASE*/
+
+.subgrid-8 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.planter-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    height: 100%;
+    width: 100%;
+}
+
+.sub-planter-1 {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+
+/*PLANT HOLDER TOP*/
+
+.sub-planter-2 {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.plant-holder-top {
+    height: 100%;
+    width: 100%;
+    background-color: #033859;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: .6em;
+    border-bottom-right-radius: .6em;
+    background: rgb(3, 35, 89);
+    background: -moz-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
+    background: linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#032359", endColorstr="#033859", GradientType=1);
+}
+
+.sub-planter-3 {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+
+/*PLANT HOLDER BASE*/
+
+.sub-planter-4 {
+    grid-row: span 2;
+    grid-column: span 1;
+}
+
+.plant-holder-base {
+    height: 100%;
+    width: 100%;
+    background-color: #033859;
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+    border-top-right-radius: 25%;
+    border-top-left-radius: 25%;
+    background: rgb(3, 35, 89);
+    background: -moz-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
+    background: -webkit-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
+    background: linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#032359", endColorstr="#033859", GradientType=1);
+    background: linear-gradient(135deg, rgba(3, 35, 89, 1) 25%, transparent 25%) -50px 0, linear-gradient(225deg, rgba(3, 35, 89, 1) 25%, transparent 25%) -50px 0, linear-gradient(315deg, rgba(3, 35, 89, 1) 25%, transparent 25%), linear-gradient(45deg, rgba(3, 35, 89, 1) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: rgba(3, 56, 89, 1);
+}
+
+.subgrid-9 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
