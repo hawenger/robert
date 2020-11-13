@@ -1,43 +1,80 @@
 .wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: 4fr 4fr 1fr 1fr;
   width: 100%;
   min-height: 100vh;
 }
-
-.RobertScene {
-display: flex;
-justify-content: center;
-}
-
-.RobertsBody {
+.RobertContainer {
   display: grid;
   width: 100%;
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-.SpeechScene {
+.SpeechContainer {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.SpeechElementsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:  1fr, 2fr;
 }
 
 .SpeechBubble {
+  background-color: aquamarine;
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-row: span 1;
+  grid-column: span 1;
 }
 
-.VisibleSpeech {
+.BubbleGoodies{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+  text-align: center;
+}
+
+.DisplayBox {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: orange;
-  height: 20em;
-  width: 20em;
-  border-radius: 50% 50%;
+  height: 100%;
+  grid-column: span 1;
+  grid-row: span 2;
 }
 
-.RenderScene{ 
+.DisplayDiv {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+.WakeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 2;
+}
+.EmptyDiv-1 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.EmptyDiv-2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.ResetButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: span 2;
 }
