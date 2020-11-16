@@ -1,4 +1,7 @@
 
 export const SET_ROBERT_MOOD_RETURNING = "SET_ROBERT_MOOD";
-export const LINK_INTEREST = "LINK_INTEREST";
-export const LINK_DISINTEREST = "LINK_DISINTEREST";
+export const RETURNING_USER = "RETURNING_USER";
+export const DISPLAY_OBJECT = "DISPLAY_OBJECT";
+export const RESET_ROBERT = "RESET_ROBERT";
+export const HIDE = "HIDE";
+export const SHOW = "SHOW";

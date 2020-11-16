@@ -2,8 +2,11 @@ import React, { createContext, useReducer, useContext } from "react";
 import robertService from './robertService';
 import {
     SET_ROBERT_MOOD_RETURNING,
-    LINK_INTEREST,
-    LINK_DISINTEREST
+    RESET_ROBERT,
+    RETURNING_USER,
+    DISPLAY_OBJECT,
+    HIDE,
+    SHOW
     //ADD_POST,
     //ADD_FAVORITE,
     //UPDATE_FAVORITES,
@@ -40,27 +43,43 @@ const reducer = (state, action) => {
         return {
           ...state,
           mood: action.mood,
-          speech: action.speech
+          returningSpeech: action.returningSpeech,
+          speech:action.speech,
           //link: randomMood.link
         };
-    case LINK_INTEREST:
+    case RETURNING_USER:
       return {
         ...state,
-        showLink: true
+        returning: action.returning
       };
-  
-    case LINK_DISINTEREST:
+    case DISPLAY_OBJECT:
       return {
         ...state,
-        showLink:false
+        yesNoButtons: action.yesNoButtons,
+        displayButton: action.displayButton,
+        showLink: action.showLink
       };
-
-      case LINK_DISINTEREST:
-        return {
-          ...state,
-          showLink:false
-        };
-  
+    case HIDE:
+      return {
+        ...state,
+        display: {display: 'none'}
+      };
+    case SHOW:
+      return {
+        ...state,
+        display: {display: 'flex'}
+      };
+    case RESET_ROBERT:
+    return {
+      ...state,
+      mood: null,
+      returningSpeech:"Would you like to see something else?",
+      speech:"",
+      returning: true,
+      yesNoButtons: false,
+      displayButton: true,
+      display: {display:'flex'},
+    };
     default:
       return state;
     }
@@ -69,8 +88,15 @@ const reducer = (state, action) => {
   const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
       mood: null,
+      returningSpeech:"How can I help you?",
+      newUserSpeech:"",
       speech:"",
-      showLink: Boolean
+      returning: null,
+      showLink: null,
+      yesNoButtons: false,
+      displayButton: true,
+      display: {display:'flex'},
+      displayLink: null
     });
   
     return <Provider value={[state, dispatch]} {...props} />;
