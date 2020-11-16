@@ -34,6 +34,7 @@
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 100%;
+    background-color: #010000;
     transform: rotateY(28deg) translateZ(100px);
     transform-style: preserve-3d;
     width: 100%;
@@ -205,6 +206,12 @@
 .eyeball-sub-4 {
     grid-column: span 1;
     grid-row: span 1;
+    grid-column: span 1;
+    grid-row: span 1;
+    border-radius: 50% 50%;
+    background-color: #3F0507;
+    box-shadow: 0px -20px #3a040b, -2px 20px 0 20px #3a040b, -20px -3px 0 20px #8B0C14, 20px -3px 0 20px #8B0C14, -20px -11px 0px 20px #3F0507, 20px -16px 0px 20px #3a040b, -11px -20px 0px 20px #8B0C14, 20px -20px 0px 20px #8B0C14, -20px -20px 0px 20px #3a040b;
+    
 }
 
 .eyeball {
@@ -216,8 +223,20 @@
     align-items: center;
     justify-content: space-evenly;
 }
-
-.eyelid {
+.eyelid{
+height: 2.5em;
+width: 3.5em;
+border-bottom-left-radius: 100%;
+border-bottom-right-radius: 100%;
+border-top: .5em solid#3F0507;
+border-top-left-radius: .5em;
+border-top-right-radius: .5em;
+border-bottom: .1em solid #3F0507;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+/* AWAKE.eyelid {
     height: 2.5em;
     width: 3.5em;
     background-color: white;
@@ -230,6 +249,7 @@
     align-items: center;
     justify-content: space-evenly;
 }
+/*
 
 .pupil {
     height: 1em;
@@ -237,6 +257,14 @@
     background-color: #010000;
     border-radius: 50%;
 }
+
+/*AWAKE.pupil {
+    height: 1em;
+    width: 1em;
+    background-color: #010000;
+    border-radius: 50%;
+}
+*/
 
 .eyeball-sub-5 {
     grid-column: span 1;
@@ -405,15 +433,10 @@ h3 {
 }
 
 .plant-stem {
-    background-color: #4A8C6D;
-    background: hsla(152, 31%, 42%, 1);
-    background: linear-gradient(225deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A8C6D", endColorstr="#3B7057", GradientType=1);
     height: 100%;
     width: 100%;
     border-radius: .1em;
+    box-shadow: inset -6px -7px 0px 11px black;
 }
 
 .sub-planter-body-3 {
@@ -430,16 +453,11 @@ h3 {
 }
 
 .plant-leaf {
-    background-color: #4A8C6D;
-    background: hsla(152, 31%, 42%, 1);
-    background: linear-gradient(90deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 0.3) 80%);
-    background: -moz-linear-gradient(90deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 0.3) 80%);
-    background: -webkit-linear-gradient(90deg, hsla(152, 31%, 42%, 1) 0%, hsla(152, 31%, 34%, 0.3) 80%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4A8C6D", endColorstr="#3B7057", GradientType=1);
     border-bottom-right-radius: 2em;
     border-top-left-radius: 1em;
     height: 100%;
     width: 25%;
+    box-shadow: 0px -8px 0px 15px black;
 }
 
 .sub-planter-body-5 {
@@ -489,16 +507,11 @@ h3 {
 .plant-holder-top {
     height: 100%;
     width: 100%;
-    background-color: #033859;
-    border-top-right-radius: 1em;
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: .6em;
-    border-bottom-right-radius: .6em;
-    background: rgb(3, 35, 89);
-    background: -moz-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
-    background: -webkit-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
-    background: linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#032359", endColorstr="#033859", GradientType=1);
+    border-top-right-radius: 3.5em;
+    border-top-left-radius: 3.5em;
+    border-bottom-left-radius: 3em;
+    border-bottom-right-radius: 3em;
+    box-shadow: inset 8px 3px 0px 4px black;
 }
 
 .sub-planter-3 {
@@ -517,19 +530,12 @@ h3 {
 .plant-holder-base {
     height: 100%;
     width: 100%;
-    background-color: #033859;
-    border-bottom-right-radius: 2em;
-    border-bottom-left-radius: 2em;
+    border-bottom-right-radius: 3em;
+    border-bottom-left-radius: 3em;
     border-top-right-radius: 25%;
     border-top-left-radius: 25%;
-    background: rgb(3, 35, 89);
-    background: -moz-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
-    background: -webkit-linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
-    background: linear-gradient(48deg, rgba(3, 35, 89, 1) 14%, rgba(3, 56, 89, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#032359", endColorstr="#033859", GradientType=1);
-    background: linear-gradient(135deg, rgba(3, 35, 89, 1) 25%, transparent 25%) -50px 0, linear-gradient(225deg, rgba(3, 35, 89, 1) 25%, transparent 25%) -50px 0, linear-gradient(315deg, rgba(3, 35, 89, 1) 25%, transparent 25%), linear-gradient(45deg, rgba(3, 35, 89, 1) 25%, transparent 25%);
     background-size: 100px 100px;
-    background-color: rgba(3, 56, 89, 1);
+    box-shadow: -2px 12px 0px 12px black;
 }
 
 .subgrid-9 {
@@ -539,7 +545,7 @@ h3 {
 
 /*LEAVES*     border-radius: 1em;
     box-shadow: -1px -2px 1px 0px #3f0600; */
-
+/*
 .grid.sub-head-a {
     background: #3F0507;
     transform: rotate3d(2, -17, 66, -92deg);
@@ -627,10 +633,12 @@ h3 {
 }
 
 .grid.sub-head-23 {
+    background-image: url(./rosepetal1.png);
     background: #3F0507;
     transform: rotate3d(-47, -16, 66, -57deg);
     border-radius: 1em;
     box-shadow: -1px -2px 1px 0px #3f0600;
+    
 }
 .grid.sub-head-25 {
     background: #3F0507;
@@ -651,3 +659,4 @@ h3 {
     border-radius: 1em;
     box-shadow: -20px 3px 0px 20px #3F0507;
 }
+*/

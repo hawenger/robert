@@ -67,10 +67,21 @@
   flex-direction: column;
 }
 .WakeButton {
+  margin-top: .5em;
   display: flex;
   align-items: center;
   justify-content: center;
   grid-column: span 2;
+  border-radius: 2em;
+  box-shadow: 0px 18px 0px 5px black;
+  transition: linear 0.04s;
+  border: .1em solid black;
+  cursor: pointer;
+}
+.WakeButton:hover {
+  transform: translate(-8px, 2%);
+  box-shadow: 0px 10px 2px 5px black;
+  
 }
 .EmptyDiv-1 {
   grid-column: span 1;
