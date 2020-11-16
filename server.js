@@ -9,7 +9,7 @@ require('./models/SchemaData');
 const app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/robert`);
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost:27017/robert`, { useUnifiedTopology: true } );
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
