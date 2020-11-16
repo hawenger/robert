@@ -64,6 +64,8 @@ export default function SpeechBubble(props) {
     } 
 
     //Determine if user is returning thus what to render
+    let setNewState= props.setRobertState;
+    console.log(props.setRobertState)
     if(props.returning === false) {
         return (
             <div className="BubbleGoodies">

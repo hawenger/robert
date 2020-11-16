@@ -18,7 +18,7 @@ export default function RobertSpeech(props) {
                 <SpeechBubble {...props}/>
             </div>
             <div className="DisplayBox">
-                <DisplayBox/>
+                <DisplayBox {...props}/>
             </div>    
         </div>
 
