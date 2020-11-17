@@ -57,7 +57,8 @@ const reducer = (state, action) => {
         ...state,
         yesNoButtons: action.yesNoButtons,
         displayButton: action.displayButton,
-        showLink: action.showLink
+        showLink: action.showLink,
+        displayLink: action.displayLink
       };
     case HIDE:
       return {
@@ -91,7 +92,7 @@ const reducer = (state, action) => {
       returningSpeech:"How can I help you?",
       newUserSpeech:"",
       speech:"",
-      returning: null,
+      returning: true,
       showLink: null,
       yesNoButtons: false,
       displayButton: true,

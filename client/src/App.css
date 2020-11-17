@@ -4,6 +4,7 @@
   justify-content: center;
   min-height: 100vh;
   width: 100%;
+  background-color:#010000;
 }
 .wrapper {
   display: grid;
@@ -33,8 +34,10 @@
 }
 
 .SpeechBubble {
-  background-color: aquamarine;
+  background-color: #efefef;
+  border: .5em solid black;
   display: flex;
+  box-shadow: 3px 9px #efefef;
   align-items: center;
   justify-content: center;
   grid-row: span 1;
@@ -54,8 +57,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: orange;
+  background-color: #FF352E;
+  box-shadow: 7px -3px black;
   height: 100%;
+  border: .5em solid black;
   grid-column: span 1;
   grid-row: span 2;
 }
@@ -67,16 +72,18 @@
   flex-direction: column;
 }
 .WakeButton {
-  margin-top: .5em;
+  margin-top: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
   grid-column: span 2;
-  border-radius: 2em;
-  box-shadow: 0px 18px 0px 5px black;
+  box-shadow: 4px -3px 0px 0px #ffffff;
   transition: linear 0.04s;
   border: .1em solid black;
   cursor: pointer;
+  font-family: neon;
+  font-size: 1.5rem;
+  padding: 0 3.5rem 0 3.5rem;
 }
 .WakeButton:hover {
   transform: translate(-8px, 2%);

@@ -1,7 +1,7 @@
 import React, {setState} from 'react';
 import { useStoreContext} from "../services/GlobalState";
 import {  DISPLAY_OBJECT, RETURNING_USER, SHOW, RESET_ROBERT } from "../services/actions";
-//, {YesButtonTasks}
+//
 export default function YesNoButtons(props) {
 
     const [state, dispatch] = useStoreContext();
@@ -40,8 +40,10 @@ export default function YesNoButtons(props) {
         dispatch({
             type:  SHOW,
         });
-        //return (<DisplayDiv {...props}/>)
+       // return (<DisplayDiv {...props}/>)
     }
+
+    
 
     const resetTasks = () => {
 
@@ -49,10 +51,10 @@ export default function YesNoButtons(props) {
             type:  RESET_ROBERT,
         });
     }
-    if(state.displayButton == true)
-    return (
-        null
-    )
+    //if(state.displayButton == true)
+    //return (
+    //    null
+    //)
     return (
         <div style={{}} className="YesNoButtons">
             <button onClick={YesButtonTasks}>YES</button>

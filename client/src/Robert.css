@@ -6,14 +6,25 @@
 
 .grid {
     display: flex;
+    box-shadow: 2px -1px #010000;
 }
 
 .subgrid {
+    background: #8B0C14;
     margin-top: 4em;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     margin-bottom: 1em;
+    box-shadow: -14px 20px 0 18px #010000;
+    box-shadow:
+        0 0 0.1vw  0.4vw #fff7f7,   
+        0 0 0.4vw  0.6vw #e97272, 
+        0 0   4vw  0.4vw #e50b0b,
+        inset 0 0 1.5vw  0.4vw #e50b0b,
+        inset 0 0 0.4vw  0.2vw #e97272,
+        inset 0 0 0.5vw  0.2vw #fff7f7;
+  border-radius: 1.5rem;
 }
 
 .subgrid-1 {
@@ -34,12 +45,14 @@
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 100%;
-    background-color: #010000;
     transform: rotateY(28deg) translateZ(100px);
     transform-style: preserve-3d;
+    z-index: 100;
     width: 100%;
     border-radius: 50%;
-    box-shadow: 20px -1px 0px 0px #8B0C14, -1px -20px 0px 0px #3F0507, -20px 2px 0px 0px #3F0507, inset -16px 20px 0px 20px #8B0C14, inset 14px -20px 0px 0px #8B0C14, inset -16px -20px 0px 20px #3F0507, inset 20px 18px 0px 20px #3F0507, inset 18px -20px 0px 20px #8B0C14, -20px -6px 3px 20px #8B0C14, inset 20px -20px 0px 20px #3F0507, inset -19px 20px 0px 20px #3F0507, inset -20px -17px 0px 20px #8B0C14, inset -20px -20px 0px 20px #8B0C14, inset -16px -20px 0px 20px #3F0507, inset 20px 18px 0px 20px #3F0507, -20px -6px 0px 20px #8B0C14;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
+
+    
 }
 
 
@@ -206,11 +219,9 @@
 .eyeball-sub-4 {
     grid-column: span 1;
     grid-row: span 1;
-    grid-column: span 1;
-    grid-row: span 1;
     border-radius: 50% 50%;
-    background-color: #3F0507;
-    box-shadow: 0px -20px #3a040b, -2px 20px 0 20px #3a040b, -20px -3px 0 20px #8B0C14, 20px -3px 0 20px #8B0C14, -20px -11px 0px 20px #3F0507, 20px -16px 0px 20px #3a040b, -11px -20px 0px 20px #8B0C14, 20px -20px 0px 20px #8B0C14, -20px -20px 0px 20px #3a040b;
+    background-color: #000000;
+    box-shadow: 0px -20px #3a040b, -2px 20px 0 20px #3a040b, -20px -3px 0 20px #8B0C14, 20px -3px 0 20px #8B0C14, -20px -11px 0px 20px #3F0507, 20px -12px 0px 20px #3a040b;
     
 }
 
@@ -219,9 +230,11 @@
     width: 5em;
     background-color: #8B0C14;;
     border-radius: 50%;
+    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
 }
 .eyelid{
 height: 2.5em;
@@ -293,6 +306,17 @@ justify-content: space-evenly;
     border-bottom-left-radius: 4em;
     background: #3F0507;
     border: .3em solid #8B0C14;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1.5fr 2fr;
+    height: 2em;
+    width: 6em;
+    border-top-right-radius: 5em;
+    border-top-left-radius: 5em;
+    border-bottom-right-radius: 4em;
+    border-bottom-left-radius: 4em;
+    background: #3F0507;
+    border: .3em solid #8B0C14;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
 }
 
 .sub-mouth-1 {
@@ -430,13 +454,17 @@ h3 {
 .sub-planter-body-2 {
     grid-column: span 1;
     grid-row: span 4;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
+    
+
 }
 
 .plant-stem {
     height: 100%;
     width: 100%;
     border-radius: .1em;
-    box-shadow: inset -6px -7px 0px 11px black;
+    box-shadow: inset -6px -7px 0px 11px #010000;
+    z-index: -100;
 }
 
 .sub-planter-body-3 {
@@ -457,7 +485,8 @@ h3 {
     border-top-left-radius: 1em;
     height: 100%;
     width: 25%;
-    box-shadow: 0px -8px 0px 15px black;
+    box-shadow: 0px -8px 0px 15px #010000;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
 }
 
 .sub-planter-body-5 {
@@ -507,11 +536,12 @@ h3 {
 .plant-holder-top {
     height: 100%;
     width: 100%;
-    border-top-right-radius: 3.5em;
-    border-top-left-radius: 3.5em;
+    border-top-right-radius: 1.5em;
+    border-top-left-radius: 1.5em;
     border-bottom-left-radius: 3em;
     border-bottom-right-radius: 3em;
-    box-shadow: inset 8px 3px 0px 4px black;
+    box-shadow: inset 8px 3px 0px 4px #010000;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
 }
 
 .sub-planter-3 {
@@ -532,10 +562,11 @@ h3 {
     width: 100%;
     border-bottom-right-radius: 3em;
     border-bottom-left-radius: 3em;
-    border-top-right-radius: 25%;
-    border-top-left-radius: 25%;
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
     background-size: 100px 100px;
-    box-shadow: -2px 12px 0px 12px black;
+    box-shadow: -2px 12px 0px 12px #010000;
+    box-shadow: 0 0 0.1vw 0.4vw #fff7f7, 0 0 0.4vw 0.6vw #e97272, 0 0 4vw 0.4vw #e50b0b, inset 0 0 1.5vw 0.4vw #e50b0b, inset 0 0 0.4vw 0.2vw #e97272, inset 0 0 0.5vw 0.2vw #fff7f7;
 }
 
 .subgrid-9 {
@@ -660,3 +691,38 @@ h3 {
     box-shadow: -20px 3px 0px 20px #3F0507;
 }
 */
+
+/*Animations*/
+.pulsate-fwd {
+    -webkit-animation: pulsate-fwd 6s ease-in-out infinite both;
+    animation: pulsate-fwd 6s ease-in-out infinite both;
+}
+@-webkit-keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes pulsate-fwd {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.02);
+        transform: scale(1.02);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
