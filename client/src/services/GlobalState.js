@@ -58,7 +58,8 @@ const reducer = (state, action) => {
         yesNoButtons: action.yesNoButtons,
         displayButton: action.displayButton,
         showLink: action.showLink,
-        displayLink: action.displayLink
+        displayLink: action.displayLink,
+        linkName: action.linkName
       };
     case HIDE:
       return {
@@ -97,7 +98,8 @@ const reducer = (state, action) => {
       yesNoButtons: false,
       displayButton: true,
       display: {display:'flex'},
-      displayLink: null
+      displayLink: null,
+      linkName: null
     });
   
     return <Provider value={[state, dispatch]} {...props} />;

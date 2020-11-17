@@ -1,6 +1,6 @@
 import React from 'react';
-import SpeechBubble from './SpeechBubble';
-import DisplayBox from './DisplayBox';
+import SpeechBubble from './SpeechComponents/SpeechBubble';
+import DisplayBox from './ResultsComponents/DisplayBox';
 
 export default function RobertSpeech(props) {
     console.log(props);

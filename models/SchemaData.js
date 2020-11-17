@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
-const productSchema = new Schema({
-    name: String,
+const projectSchema = new Schema({
+    title: String,
+    link: String,
     description: String,
 });
 
@@ -26,7 +27,7 @@ const userSchema = new Schema({
   
 });
 
-mongoose.model('products', productSchema);
+mongoose.model('projects', projectSchema);
 mongoose.model("users", userSchema);
 mongoose.model("moods", robertSchema);
 mongoose.model("buttons", buttonSchema);

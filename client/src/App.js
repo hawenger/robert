@@ -3,7 +3,7 @@ import "./App.css";
 import "./Robert.css";
 import robertService from './services/robertService';
 import RobertSpeech from './components/RobertSpeech';
-import RobertsBody from './components/RobertsBody';
+import RobertsBody from './components/RobertsBodyComponents/RobertsBody';
 import { StoreProvider } from "./services/GlobalState";
 
 
