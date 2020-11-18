@@ -21,6 +21,5 @@ export default function RobertSpeech(props) {
                 <DisplayBox {...props}/>
             </div>    
         </div>
-
     )
 }

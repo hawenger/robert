@@ -4,12 +4,11 @@ import { useStoreContext} from "../../services/GlobalState";
 
 export default function DisplayBox(props) {
 
+    const [state] = useStoreContext();
 
-const [state] = useStoreContext();
-console.log(state);
     return (
         <div className="yesButtonTasks">
-            <a href={state.displayLink}>{state.linkName}</a>
+            <a href={state.link}>{state.title}</a>
         </div>
     )
 

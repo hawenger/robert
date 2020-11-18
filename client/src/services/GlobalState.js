@@ -1,9 +1,9 @@
 import React, { createContext, useReducer, useContext } from "react";
-import robertService from './robertService';
+
 import {
     SET_ROBERT_MOOD_RETURNING,
+    SET_PROJECT,
     RESET_ROBERT,
-    RETURNING_USER,
     DISPLAY_OBJECT,
     HIDE,
     SHOW
@@ -16,25 +16,6 @@ import {
   
 const StoreContext = createContext();
 const { Provider } = StoreContext;
-//let randomMood;
-
-//function apiCall() {
-//  robertService.getAllMood({
-//    //res = await robertService.getAllMood();
-//    
-//  })
-//  .then(result => {
-//    randomMood= result[Math.floor(Math.random()*result.length)];
-//    
-//    //console.log(state.mood);
-//    console.log(randomMood)
-//  })
-//  .catch(err => console.log(err));
-//
-//  //titleRef.current.value = "";
-//  //bodyRef.current.value = "";
-//}
-
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -43,15 +24,9 @@ const reducer = (state, action) => {
         return {
           ...state,
           mood: action.mood,
-          returningSpeech: action.returningSpeech,
-          speech:action.speech,
+          speech: action.speech
           //link: randomMood.link
         };
-    case RETURNING_USER:
-      return {
-        ...state,
-        returning: action.returning
-      };
     case DISPLAY_OBJECT:
       return {
         ...state,
@@ -59,7 +34,16 @@ const reducer = (state, action) => {
         displayButton: action.displayButton,
         showLink: action.showLink,
         displayLink: action.displayLink,
-        linkName: action.linkName
+        linkName: action.linkName,
+        speech: action.speech,
+        title: action.title
+      };
+    case SET_PROJECT:
+      return {
+        ...state,
+        title: action.title,
+        link: action.link,
+        description: action.description
       };
     case HIDE:
       return {
@@ -75,12 +59,11 @@ const reducer = (state, action) => {
     return {
       ...state,
       mood: null,
-      returningSpeech:"Would you like to see something else?",
-      speech:"",
-      returning: true,
+      speech:"Would you like to see something else?",
       yesNoButtons: false,
       displayButton: true,
       display: {display:'flex'},
+      link: null
     };
     default:
       return state;
@@ -90,16 +73,17 @@ const reducer = (state, action) => {
   const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
       mood: null,
-      returningSpeech:"How can I help you?",
       newUserSpeech:"",
-      speech:"",
-      returning: true,
+      speech:"How can I help you?",
       showLink: null,
       yesNoButtons: false,
       displayButton: true,
       display: {display:'flex'},
       displayLink: null,
-      linkName: null
+      linkName: null,
+      title:null,
+      link:null,
+      description:null
     });
   
     return <Provider value={[state, dispatch]} {...props} />;

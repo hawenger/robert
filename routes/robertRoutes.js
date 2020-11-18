@@ -8,7 +8,7 @@ const Button = mongoose.model('buttons');
 module.exports = (app) => {
 
   //PROJECTS
-  
+
   app.get(`/api/project`, async (req, res) => {
     let projects = await Project.find();
     return res.status(200).send(projects);
@@ -158,4 +158,5 @@ module.exports = (app) => {
     });
 
   });
+
 }

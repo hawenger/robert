@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import "./Robert.css";
 import robertService from './services/robertService';
@@ -21,7 +21,7 @@ function App(props) {
   const [returning, setReturning] = useState(null);
 
   function verifyUser() {
-    if(possibleUsers == "" || possibleUsers.length > 1) {
+    if(possibleUsers === "" || possibleUsers.length > 1) {
       console.log('empty');
       setReturning(false);
     } else if(possibleUsers[0].userId === currentId) {

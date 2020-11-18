@@ -5,7 +5,7 @@ import ActionButtons from '../ActionButtons';
 
 export default function SpeechBubble(props) {
     //SETTING STATES
-    const [newUserSpeech, setNewUserSpeech] = useState("Hi, I'm Robert!");
+    const [newUserSpeech] = useState("Hi, I'm Robert!");
     
     const [state] = useStoreContext();
 
@@ -21,7 +21,7 @@ export default function SpeechBubble(props) {
     }
     return (
         <div className="BubbleGoodies">
-            <h1>{state.returningSpeech}</h1>
+            <h2>{state.speech}</h2>
             <ActionButtons {...props} />
             <YesNoButtons {...props} />
         </div>

@@ -6,7 +6,7 @@ import robertService from '../../services/robertService';
 
 export default function CallRobertMood(props) {
     
-    const [returningButton, setReturningButton] = useState("Show Me Something!")
+    const [returningButton] = useState("Show Me Something!")
 
     const [state, dispatch] = useStoreContext();
     
@@ -18,19 +18,21 @@ export default function CallRobertMood(props) {
         robertService.getAllMood({
 
         })
-        .then(result => {
+        .then(result => {  
+          const clearTitle = null; 
           const toggleOn = true;
           const toggleOff = false;
           randomMood= result[Math.floor(Math.random()*result.length)];
           dispatch({
             type: SET_ROBERT_MOOD_RETURNING,
             mood: randomMood.mood,
-            returningSpeech: randomMood.innerText
           });
           dispatch({
               type: DISPLAY_OBJECT,
               yesNoButtons: toggleOn,
-              displayButton: toggleOff
+              displayButton: toggleOff,
+              speech: randomMood.innerText,
+              title: clearTitle
             });
         dispatch({
             type: HIDE
