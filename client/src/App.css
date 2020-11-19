@@ -5,6 +5,8 @@
   min-height: 100vh;
   width: 100%;
   background-color:#010000;
+  font-family: 'Questrial', sans-serif;
+  color: #66FF66;
 }
 .wrapper {
   display: grid;
@@ -34,11 +36,9 @@
 }
 
 .SpeechBubble {
-  background-color: #efefef;
-  border: .5em solid black;
+  background-color: transparent;
   display: flex;
-  box-shadow: 3px 9px #efefef;
-  align-items: center;
+    align-items: center;
   justify-content: center;
   grid-row: span 1;
   grid-column: span 1;
@@ -67,18 +67,30 @@
   margin-left: 2em;
   margin-top: 2em;
   border: none;
+  background: transparent;
+  transition: linear, 0.3s;
+  cursor: pointer;
+}
+.actionbtn:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2em;
+  margin-top: 2em;
+  border: none;
+  background: transparent;
+  font-size: 1em;
 }
 
 .DisplayBox {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #FF352E;
-  box-shadow: 7px -3px black;
+  box-shadow: 6px -3px 10px 0px #f07777, 20px 0px 16px 3px #ff352e, 20px 0px 16px 3px #3a040b;
   height: 100%;
-  border: .5em solid black;
   grid-column: span 1;
   grid-row: span 2;
+  border-radius: 2em;
 }
 
 .DisplayDiv {
@@ -89,21 +101,28 @@
 }
 .WakeButton {
   margin-top: 2em;
-  display: flex;
   align-items: center;
   justify-content: center;
   grid-column: span 2;
-  box-shadow: 4px -3px 0px 0px #ffffff;
   transition: linear 0.04s;
-  border: .1em solid black;
+  border: none;
+  box-shadow: 5px -3px 17px 0px #8B0C14, 3px -4px 17px 0px #d57373, 2px -2px 17px 0px #3a040b;
   cursor: pointer;
-  font-family: neon;
   font-size: 1.5rem;
+  border-radius: 1em;
   padding: 0 3.5rem 0 3.5rem;
+  color: #010000;
+  text-shadow: 0px 0px 4px #8d0c14, 0px 0px 4px #e76d6d;
+  background: transparent;
+  font-family: 'Questrial', sans-serif;
+  text-transform: uppercase;
+  transition: linear 0.2s;
 }
 .WakeButton:hover {
   transform: translate(-8px, 2%);
   box-shadow: 0px 10px 2px 5px black;
+  text-shadow: 0px 0px 4px #8d0c14, 0px 0px 4px #e76d6d, 0px 0px 4px #fff6f6;
+  font-size: 1.8rem;
   
 }
 .EmptyDiv-1 {

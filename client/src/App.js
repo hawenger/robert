@@ -44,7 +44,7 @@ function App(props) {
           <RobertSpeech {...props} returning={returning}/>
         </div>
         <div className="EmptyDiv-1"></div>
-        <button style={hideWake} {...props} className = "WakeButton" onClick={wakingRobert}>Wake Robert</button>
+        <button style={hideWake} {...props} className = "WakeButton color-vibrate" onClick={wakingRobert}>Wake Robert</button>
         <div className="EmptyDiv-2"></div>
       </StoreProvider>  
     </div>
