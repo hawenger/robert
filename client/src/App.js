@@ -17,7 +17,7 @@ function App(props) {
     possibleUsers = res.filter(element => element.userId === currentId);
   }
   getUsers();
-
+  const [hideWake, setHideWake] = useState({display:"flex"});
   const [returning, setReturning] = useState(null);
 
   function verifyUser() {
@@ -30,6 +30,7 @@ function App(props) {
     }
   }
   function wakingRobert() {
+    setHideWake({display:'none'});
     verifyUser();
   }
 
@@ -43,7 +44,7 @@ function App(props) {
           <RobertSpeech {...props} returning={returning}/>
         </div>
         <div className="EmptyDiv-1"></div>
-        <button {...props} className = "WakeButton" onClick={wakingRobert}>Wake Robert</button>
+        <button style={hideWake} {...props} className = "WakeButton" onClick={wakingRobert}>Wake Robert</button>
         <div className="EmptyDiv-2"></div>
       </StoreProvider>  
     </div>

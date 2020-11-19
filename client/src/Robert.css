@@ -6,7 +6,7 @@
 
 .grid {
     display: flex;
-    box-shadow: 2px -1px #010000;
+    box-shadow: 2px -1px rgb(1 0 0 / 51%);
 }
 
 .subgrid {

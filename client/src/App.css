@@ -53,6 +53,22 @@
   text-align: center;
 }
 
+.ActionButtonDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.actionbtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2em;
+  margin-top: 2em;
+  border: none;
+}
+
 .DisplayBox {
   display: flex;
   align-items: center;
