@@ -87,7 +87,7 @@ export default function RobertsBody() {
                                     <div className="eyeball-sub-3 grid"></div>
                                     <div className="eyeball-sub-4 grid">
                                         <div className="eyeball">
-                                            <div className="eyelid">
+                                            <div className="eyelid sleep-twitch">
                                                 <div className="pupil"></div>
                                             </div>
                                         </div>
@@ -167,7 +167,7 @@ export default function RobertsBody() {
                                 <div className="leaf leaf-bottom-left-bloom"></div>
                             </div>
                             <div className="grid sub-head-v">
-                                <div className="mouth-grid">
+                                <div className="mouth-grid mouth-droop">
                                     <div className="grid sub-mouth-1"></div>
                                     <div className="grid sub-mouth-2">
                                         <div className="left-fang"></div>
