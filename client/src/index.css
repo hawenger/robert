@@ -17,6 +17,10 @@ body {
   -webkit-animation: sleep-twitch 6s ease-in-out infinite both;
   animation: sleep-twitch 6s ease-in-out infinite both;
 }
+.leaf-twitch {
+  -webkit-animation: leaf-twitch 4s ease-in-out infinite both;
+  animation: leaf-twitch 4s ease-in-out infinite both;
+}
 
 @-webkit-keyframes color-vibrate {
   0% {
@@ -169,3 +173,45 @@ body {
      height: 2.5em;
    }
 }
+@-webkit-keyframes leaf-twitch {
+  0% {
+    
+    transform: none;
+   }
+  74%{
+    transform: none;
+  }
+   75%{
+ 
+     transform: rotate3d(1, 1, 1, 15deg);
+   }
+   80%{
+     transform: none;
+   }
+   100% {
+     
+    transform: none;
+   }
+}
+
+@keyframes leaf-twitch {
+  0% {
+    
+    transform: none;
+   }
+  74%{
+    transform: none;
+  }
+   75%{
+ 
+    transform: rotate3d(1, 1, 1, 15deg);
+   }
+   80%{
+     transform: none;
+   }
+   100% {
+     
+    transform: none;
+   }
+}
+

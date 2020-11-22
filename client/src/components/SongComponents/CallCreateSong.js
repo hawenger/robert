@@ -5,7 +5,108 @@ import robertService from '../../services/robertService';
 import * as Tone from 'tone';
 
 export default function CallCreateSong(props) {
+    let randomMoodScale;
+    let randomProgressionRoot;
+    let randomProgressionThird;
+    let randomProgressionSixth;
+    let sequence1;
+    let sequence2;
+    let sequence3;
+    let sequence4;
+    //holds string version of random songs array positions
+    let rootArray=[];
+    let thirdArray=[];
+    let sixthArray=[];
 
+    //Final Melody
+    let rootMelody=[];
+    let thirdMelody=[];
+    let sixthMelody=[];
+
+    //Defining all major and minor scales
+
+    const scales = [['C','D','E','F','G','A','B'],['G','A','B','C','D','E','F#'],['D','E','F#','G','A','B','C#'],['A','B','C#','D','E','F#','G#'],['E','F#','G#','A','B','C#','D#'],['B','C#','D#','E','F#','G#','A#']];
+
+    //Defining common chord progressions for a 3 note chord (root, third, sixth);
+    const chordProgressionsRoot =[[0,4,5,3],[4,5,3,0],[5,3,0,4],[3,0,4,5]];
+    const chordProgressionsThird =[[2,6,7,5],[6,7,5,2],[7,5,2,6],[5,2,6,7]];
+    const chordProgressionsSixth =[[4,0,1,7],[0,1,7,4],[1,7,4,0],[7,4,0,1]];
+
+    //Picking random major/minor scale for song
+    function pickRandomScale() {
+        randomMoodScale = scales[Math.floor(Math.random()*scales.length)];
+        //console.log(randomMoodScale);
+    }
+
+    //Picking 4 chord progression sequences to form song
+    function pickRandomChordProgression() {
+        sequence1 = Math.floor(Math.random() * 4);
+        sequence2 = Math.floor(Math.random() * 4);
+        sequence3 = Math.floor(Math.random() * 4);
+        sequence4 = Math.floor(Math.random() * 4);
+        pickRandomChordProgressionRoot();
+        pickRandomChordProgressionThird();
+        pickRandomChordProgressionSixth();
+        rootChordSequence();
+        //console.log(sequence1, sequence2, sequence3, sequence4);
+    }
+
+    //Function to grab scale array note placements for rooth, third and sixth
+    function pickRandomChordProgressionRoot() {
+        rootArray.push((`${chordProgressionsRoot[sequence1]},${chordProgressionsRoot[sequence2]},${chordProgressionsRoot[sequence3]},${chordProgressionsRoot[sequence4]}`).split(','));
+        //console.log(rootArray);
+    }
+
+    function pickRandomChordProgressionThird() {
+        thirdArray.push((`${chordProgressionsThird[sequence1]},${chordProgressionsThird[sequence2]},${chordProgressionsThird[sequence3]},${chordProgressionsThird[sequence4]}`).split(','));
+        //console.log(thirdArray);
+
+    }
+
+    function pickRandomChordProgressionSixth() {
+        sixthArray.push((`${chordProgressionsSixth[sequence1]},${chordProgressionsSixth[sequence2]},${chordProgressionsSixth[sequence3]},${chordProgressionsSixth[sequence4]}`).split(','));
+        //console.log(sixthArray);
+    }
+    pickRandomScale();
+    pickRandomChordProgression();
+
+    function rootChordSequence() {
+        console.log(randomMoodScale);
+        console.log(rootArray);
+        //rootMelody = rootArray.map(element => randomMoodScale[parseInt(element)]);
+        for (let i = 0; i<rootArray.length; i++) {
+            //let randomMoodScaleCopy = [...randomMoodScale];
+            let x = [parseInt(rootArray[i])];
+            rootMelody.push(x);
+            console.log(rootMelody);
+        }
+        //    console.log(x)
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[0])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[1])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[2])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[3])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[4])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[5])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[6])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[7])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[8])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[9])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[10])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[11])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[12])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[13])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[14])]);
+        //rootMelody.push(randomMoodScale[parseInt(rootArray[15])]);
+        ////    
+
+        ////    
+        ////}
+        //
+    }//
+    //
+    //pickRandomChordProgressionRoot();
+    //pickRandomChordProgressionThird();
+    //pickRandomChordProgressionSixth();
     let randomSongTitle= "Midnight in Rhapsody"
 
     const [state, dispatch] = useStoreContext();
@@ -52,11 +153,13 @@ export default function CallCreateSong(props) {
                 }
     };
     randomScale();
-    const synth = new Tone.PolySynth();
+    const synth = new Tone.Synth();
+    const synth2 = new Tone.MembraneSynth();
     //synth.oscillator.type = 'sine';
     const gain = new Tone.Gain(0.5);
     gain.toDestination();
     synth.connect(gain);
+    synth2.connect(gain);
     
     
     
@@ -69,8 +172,11 @@ export default function CallCreateSong(props) {
     
     function repeat(time) {
         const notes = [`C${x} E${x} G${x}`, `F${y} A${y} C${y}`, `D${z} F${z} A${z}`, `C${a} E${a} G${a}`, `A${b} C${b} E${b}`, `C${c} E${c} G${c} B${b}`];
+        const notes2= [`G${y} C${y} E${y}`, `C${x} F${x} A${x}`, `A${a} D${a} F${a}`, ` G${z} C${z} E${z}`, `E${c} A${c} C${c}`, `G${b} C${b} E${b} B${b}`];
         let note = notes[index % notes.length];
+        let note2 = notes2[index% notes2.length];
         synth.triggerAttackRelease(note, '8n', time);
+        synth2.triggerAttackRelease(note2, '8n', time);
         index ++;
     }
 
@@ -82,11 +188,11 @@ export default function CallCreateSong(props) {
     setTimeout(() => {
         Tone.Transport.stop();
     }, 5000);
-};
+    };
 
     return (
         <>
             <button className="actionbtn" style={state.display} onClick={playASong}><i style={{color:'#ff352e', fontSize:'5em', textShadow: '1px 2px 0px #010000'}} class="fa fa-headphones" aria-hidden="true"></i></button>
         </>
     )
-}
+    }

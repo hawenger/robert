@@ -206,7 +206,7 @@ export default function RobertsBody() {
                             </div>
                             <div className="grid sub-planter-body-3"></div>
                             <div className="grid sub-planter-body-4">
-                                <div className="plant-leaf"></div>
+                                <div className="plant-leaf leaf-twitch"></div>
                             </div>
                             <div className="grid sub-planter-body-5"></div>
                         </div>
