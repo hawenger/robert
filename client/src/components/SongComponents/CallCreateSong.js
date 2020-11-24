@@ -184,24 +184,32 @@ export default function CallCreateSong(props) {
     // };
 
     randomScale();
-    const synth = new Tone.Synth();
-    const synth2 = new Tone.Synth();
-    const synth3 = new Tone.Synth();
+    const synth = new Tone.PolySynth(Tone.Synth);
+    //const synth2 = new Tone.Synth();
+    //const synth3 = new Tone.Synth();
+    //const synth4 = new Tone.AMSynth();
+    const percussion = new Tone.MetalSynth();
     //synth.oscillator.type = 'sine';
     const gain = new Tone.Gain(0.5);
     gain.toDestination();
     synth.connect(gain);
-    synth2.connect(gain);
-    synth3.connect(gain);
+    //synth2.connect(gain);
+    //synth3.connect(gain);
+    percussion.connect(gain);
     
-    
+    //let '8n';
+//
+    //function pickNoteLength() {
+    //    const '8n'Array=[ '8n', '12n']
+    //    '8n'='8n'Array[Math.floor(Math.random()*'8n'Array.length)]
+    //};
     
     let index = 0;
     
     Tone.Transport.scheduleRepeat(time => {
         repeat(time);
     
-    }, '8n');
+    }, '6n');
     
     function repeat(time) {
         const notes = root;
@@ -210,21 +218,31 @@ export default function CallCreateSong(props) {
         let note = notes[index % notes.length];
         let note2 = notes2[index% notes2.length];
         let note3 = notes3[index% notes3.length];
-        synth.triggerAttackRelease(note, '8n', time);
-        synth2.triggerAttackRelease(note2, '8n', time);
-        synth3.triggerAttackRelease(note3, '8n', time);
+        synth.triggerAttackRelease(note, '6n', time);
+        synth.triggerAttackRelease(note2, '6n', time);
+        synth.triggerAttackRelease(note3, '6n', time);
+        //synth.triggerAttackRelease(note, '8n', time + 4);
+        //synth.triggerAttackRelease(note2, '8n', time);
+        //synth.triggerAttackRelease(note3, '8n', time + 8);
+        //synth.triggerAttackRelease(note, '8n', time + 6);
+        //synth.triggerAttackRelease(note2, '12n', time);
+        //synth.triggerAttackRelease(note3, '8n', time);
+        //synth2.triggerAttackRelease(note2, '8n', time);
+        //synth.triggerAttackRelease(note3, '8n', time + 12);
+        //percussion.triggerAttackRelease(note, '8n', time);
         index ++;
     }
 
     const playASong = () => {
     //await 
     //randomScale();
+    //pickNoteLength();
     createSong();
     Tone.start()
     Tone.Transport.start();
-    setTimeout(() => {
-        Tone.Transport.stop();
-    }, 5000);
+    //setTimeout(() => {
+    //    Tone.Transport.stop();
+    //}, 5000);
     };
 
     return (
