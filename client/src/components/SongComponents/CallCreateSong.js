@@ -29,8 +29,8 @@ export default function CallCreateSong(props) {
 
     //Defining common chord progressions for a 3 note chord (root, third, sixth);
     const chordProgressionsRoot =[[0,4,5,3],[4,5,3,0],[5,3,0,4],[3,0,4,5]];
-    const chordProgressionsThird =[[2,6,7,5],[6,7,5,2],[7,5,2,6],[5,2,6,7]];
-    const chordProgressionsSixth =[[4,0,1,7],[0,1,7,4],[1,7,4,0],[7,4,0,1]];
+    const chordProgressionsThird =[[2,6,0,5],[6,0,5,2],[0,5,2,6],[5,2,6,0]];
+    const chordProgressionsSixth =[[4,1,2,0],[1,2,0,4],[2,0,4,1],[0,4,1,2]];
 
     //Picking random major/minor scale for song
     function pickRandomScale() {
@@ -47,7 +47,7 @@ export default function CallCreateSong(props) {
         pickRandomChordProgressionRoot();
         pickRandomChordProgressionThird();
         pickRandomChordProgressionSixth();
-        rootChordSequence();
+        
         //console.log(sequence1, sequence2, sequence3, sequence4);
     }
 
@@ -69,44 +69,33 @@ export default function CallCreateSong(props) {
     }
     pickRandomScale();
     pickRandomChordProgression();
+    defineChordSequence();
+
+    function defineChordSequence() {
+        rootChordSequence();
+        thirdChordSequence();
+        sixthChordSequence();
+        //console.log(thirdMelody);
+    }
 
     function rootChordSequence() {
-        console.log(randomMoodScale);
-        console.log(rootArray);
-        //rootMelody = rootArray.map(element => randomMoodScale[parseInt(element)]);
-        for (let i = 0; i<rootArray.length; i++) {
-            //let randomMoodScaleCopy = [...randomMoodScale];
-            let x = [parseInt(rootArray[i])];
-            rootMelody.push(x);
-            console.log(rootMelody);
-        }
-        //    console.log(x)
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[0])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[1])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[2])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[3])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[4])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[5])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[6])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[7])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[8])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[9])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[10])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[11])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[12])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[13])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[14])]);
-        //rootMelody.push(randomMoodScale[parseInt(rootArray[15])]);
-        ////    
-
-        ////    
-        ////}
-        //
-    }//
-    //
-    //pickRandomChordProgressionRoot();
-    //pickRandomChordProgressionThird();
-    //pickRandomChordProgressionSixth();
+        //console.log(randomMoodScale);
+        //console.log(rootArray[0]);
+        rootMelody = rootArray[0].map(element => randomMoodScale[parseInt(element)]);
+        console.log(rootMelody);
+    };
+    function thirdChordSequence() {
+        //console.log(randomMoodScale);
+        //console.log(thirdArray[0]);
+        thirdMelody = thirdArray[0].map(element => randomMoodScale[parseInt(element)]);
+        
+    };
+    function sixthChordSequence() {
+        //console.log(randomMoodScale);
+        //console.log(sixthArray[0]);
+        sixthMelody = sixthArray[0].map(element => randomMoodScale[parseInt(element)]);
+        //console.log(sixthMelody);
+    };
     let randomSongTitle= "Midnight in Rhapsody"
 
     const [state, dispatch] = useStoreContext();
