@@ -1,5 +1,16 @@
 // /routes/robertRoutes.js
 const mongoose = require('mongoose');
+
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/robert',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 const Project = mongoose.model('projects');
 const Mood = mongoose.model('moods');
 const User = mongoose.model('users');
