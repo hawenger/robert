@@ -67,10 +67,10 @@ export default function CallCreateSong(props) {
         sixthArray.push((`${chordProgressionsSixth[sequence1]},${chordProgressionsSixth[sequence2]},${chordProgressionsSixth[sequence3]},${chordProgressionsSixth[sequence4]}`).split(','));
         //console.log(sixthArray);
     }
-    pickRandomScale();
-    pickRandomChordProgression();
-    defineChordSequence();
 
+
+
+    //Call all root chord sequence formulas
     function defineChordSequence() {
         rootChordSequence();
         thirdChordSequence();
@@ -78,11 +78,12 @@ export default function CallCreateSong(props) {
         //console.log(thirdMelody);
     }
 
+    //Functions to define Root Chord Sequences
     function rootChordSequence() {
         //console.log(randomMoodScale);
         //console.log(rootArray[0]);
         rootMelody = rootArray[0].map(element => randomMoodScale[parseInt(element)]);
-        console.log(rootMelody);
+        //console.log(rootMelody);
     };
     function thirdChordSequence() {
         //console.log(randomMoodScale);
@@ -96,6 +97,63 @@ export default function CallCreateSong(props) {
         sixthMelody = sixthArray[0].map(element => randomMoodScale[parseInt(element)]);
         //console.log(sixthMelody);
     };
+    let root =[];
+    let third = [];
+    let sixth = [];
+
+    //Give the root of the chord piano placement (i.e Define placement of note in variance of middle C)
+    function rootSynthPlacement() {
+        randomScale();
+        root = rootMelody.map(element => element + letterArray[Math.floor(Math.random()*letterArray.length)]);
+        console.log(root);
+    };
+    function thirdSynthPlacement() {
+        randomScale();
+        third = thirdMelody.map(element => element + letterArray[Math.floor(Math.random()*letterArray.length)]);
+        console.log(third);
+    };
+    function sixthSynthPlacement() {
+        randomScale();
+        sixth= sixthMelody.map(element => element + letterArray[Math.floor(Math.random()*letterArray.length)]);
+        console.log(sixth);
+    }
+    //Call to get final arrangments for three parts
+    function finalSynthCall(){
+        rootSynthPlacement();
+        thirdSynthPlacement();
+        sixthSynthPlacement();
+    }
+
+    //Generate Random placements of notes/distance from middle C
+    let x;
+    let y;
+    let z;
+    let a;
+    let b;
+    let c;
+    let letterArray=[];
+    
+    function randomScale() {
+                for(var i=0; i < 10; i++); {
+                    x = (Math.floor(Math.random() * 4) + 2);
+                    y = (Math.floor(Math.random() * 4) + 2);
+                    z = (Math.floor(Math.random() * 4) + 2);
+                    a = (Math.floor(Math.random() * 4) + 2);
+                    b = (Math.floor(Math.random() * 4) + 2);
+                    c = (Math.floor(Math.random() * 5) + 1);
+                }
+        letterArray.push(x,y,z,a,b,c);
+        //console.log(letterArray);    
+    };
+
+
+    function createSong() {
+        pickRandomScale();
+        pickRandomChordProgression();
+        defineChordSequence();
+        finalSynthCall();
+    }
+    
     let randomSongTitle= "Midnight in Rhapsody"
 
     const [state, dispatch] = useStoreContext();
@@ -124,31 +182,17 @@ export default function CallCreateSong(props) {
     //    })
     //    .catch(err => console.log(err));
     // };
-    let x;
-    let y;
-    let z;
-    let a;
-    let b;
-    let c;
-    
-    function randomScale() {
-                for(var i=0; i < 10; i++); {
-                    x = (Math.floor(Math.random() * 5) + 1);
-                    y = (Math.floor(Math.random() * 5) + 1);
-                    z = (Math.floor(Math.random() * 5) + 1);
-                    a = (Math.floor(Math.random() * 5) + 1);
-                    b = (Math.floor(Math.random() * 5) + 1);
-                    c = (Math.floor(Math.random() * 5) + 1);
-                }
-    };
+
     randomScale();
     const synth = new Tone.Synth();
-    const synth2 = new Tone.MembraneSynth();
+    const synth2 = new Tone.Synth();
+    const synth3 = new Tone.Synth();
     //synth.oscillator.type = 'sine';
     const gain = new Tone.Gain(0.5);
     gain.toDestination();
     synth.connect(gain);
     synth2.connect(gain);
+    synth3.connect(gain);
     
     
     
@@ -160,18 +204,22 @@ export default function CallCreateSong(props) {
     }, '8n');
     
     function repeat(time) {
-        const notes = [`C${x} E${x} G${x}`, `F${y} A${y} C${y}`, `D${z} F${z} A${z}`, `C${a} E${a} G${a}`, `A${b} C${b} E${b}`, `C${c} E${c} G${c} B${b}`];
-        const notes2= [`G${y} C${y} E${y}`, `C${x} F${x} A${x}`, `A${a} D${a} F${a}`, ` G${z} C${z} E${z}`, `E${c} A${c} C${c}`, `G${b} C${b} E${b} B${b}`];
+        const notes = root;
+        const notes2 = third;
+        let notes3 = sixth;
         let note = notes[index % notes.length];
         let note2 = notes2[index% notes2.length];
+        let note3 = notes3[index% notes3.length];
         synth.triggerAttackRelease(note, '8n', time);
         synth2.triggerAttackRelease(note2, '8n', time);
+        synth3.triggerAttackRelease(note3, '8n', time);
         index ++;
     }
 
     const playASong = () => {
     //await 
-    randomScale();
+    //randomScale();
+    createSong();
     Tone.start()
     Tone.Transport.start();
     setTimeout(() => {
