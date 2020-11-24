@@ -6,9 +6,6 @@ import * as Tone from 'tone';
 
 export default function CallCreateSong(props) {
     let randomMoodScale;
-    let randomProgressionRoot;
-    let randomProgressionThird;
-    let randomProgressionSixth;
     let sequence1;
     let sequence2;
     let sequence3;
@@ -25,7 +22,7 @@ export default function CallCreateSong(props) {
 
     //Defining all major and minor scales
 
-    const scales = [['C','D','E','F','G','A','B'],['G','A','B','C','D','E','F#'],['D','E','F#','G','A','B','C#'],['A','B','C#','D','E','F#','G#'],['E','F#','G#','A','B','C#','D#'],['B','C#','D#','E','F#','G#','A#']];
+    const scales = [['C','D','E','F','G','A','B'],['G','A','B','C','D','E','F#'],['D','E','F#','G','A','B','C#'],['A','B','C#','D','E','F#','G#'],['E','F#','G#','A','B','C#','D#'],['B','C#','D#','E','F#','G#','A#'],['F#', 'G#', 'A#', 'B', 'C#', 'D#', 'E#'],['C#', 'D#', 'E#', 'F#', 'G#', 'A#', 'B#'],['Cb', 'Db', 'Eb', 'Fb', 'Gb', 'Ab', 'Bb'],['Gb', 'Ab', 'Bb', 'Cb', 'Db', 'Eb', 'F'],['Db', 'Eb', 'F', 'Gb', 'Ab', 'Bb', 'Cb'],['Ab', 'Bb', 'C', 'Db', 'Eb', 'F', 'G'],['Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'D'],['Bb', 'C', 'D', 'Eb', 'F', 'G', 'A'],['F', 'G', 'A', 'Bb', 'C', 'D', 'E']];
 
     //Defining common chord progressions for a 3 note chord (root, third, sixth);
     const chordProgressionsRoot =[[0,4,5,3],[4,5,3,0],[5,3,0,4],[3,0,4,5]];
@@ -209,18 +206,18 @@ export default function CallCreateSong(props) {
     Tone.Transport.scheduleRepeat(time => {
         repeat(time);
     
-    }, '6n');
+    }, '8n');
     
     function repeat(time) {
         const notes = root;
         const notes2 = third;
-        let notes3 = sixth;
+        const notes3 = sixth;
         let note = notes[index % notes.length];
         let note2 = notes2[index% notes2.length];
         let note3 = notes3[index% notes3.length];
-        synth.triggerAttackRelease(note, '6n', time);
-        synth.triggerAttackRelease(note2, '6n', time);
-        synth.triggerAttackRelease(note3, '6n', time);
+        synth.triggerAttackRelease(note, '8n', time);
+        synth.triggerAttackRelease(note2, '8n', time);
+        synth.triggerAttackRelease(note3, '8n', time);
         //synth.triggerAttackRelease(note, '8n', time + 4);
         //synth.triggerAttackRelease(note2, '8n', time);
         //synth.triggerAttackRelease(note3, '8n', time + 8);
