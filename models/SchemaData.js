@@ -1,6 +1,16 @@
 const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/robert',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+);
+
 const projectSchema = new Schema({
     title: String,
     link: String,
