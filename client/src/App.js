@@ -9,6 +9,13 @@ import { StoreProvider } from "./services/GlobalState";
 
 function App(props) {
 
+  //Code for Robert's Glowing Open Eye
+  const [awake, setAwake] = useState(false);
+  
+  function wakeRobert() {
+    setAwake(true);
+  }
+
   let currentId= "1234";
   let possibleUsers= [];
 
@@ -32,13 +39,14 @@ function App(props) {
   function wakingRobert() {
     setHideWake({display:'none'});
     verifyUser();
+    wakeRobert();
   }
 
   return (
     <div className="wrapper">
       <StoreProvider>
         <div className="RobertContainer">
-          <RobertsBody {...props}/>
+          <RobertsBody awake={awake} {...props}/>
         </div>
         <div className= "SpeechContainer">
           <RobertSpeech {...props} returning={returning}/>
