@@ -3,10 +3,10 @@ import React from 'react';
 export default function RobertsBody() {
     return (
         
-            <div className="grid grid-container-2">
-                <div className="subgrid">
-                    <div className="grid subgrid-1"></div>
-                    <div className="grid subgrid-2">
+            <div className=" grid green_light_grid grid-container-2">
+                <div className= "fade-in-first electric_on subgrid">
+                    <div className="fade-in-second grid subgrid-1 green_one"></div>
+                    <div className="fade-in-fifth grid subgrid-2">
                         <div className="planter-head-grid pulsate-fwd">
                             <div className="grid sub-head-1"></div>
                             <div className="grid sub-head-2">
@@ -86,7 +86,7 @@ export default function RobertsBody() {
                                     <div className="eyeball-sub-2 grid"></div>
                                     <div className="eyeball-sub-3 grid"></div>
                                     <div className="eyeball-sub-4 grid">
-                                        <div className="eyeball">
+                                        <div className="electric_on_body eyeball">
                                             <div className="eyelid sleep-twitch">
                                                 <div className="pupil"></div>
                                             </div>
@@ -167,7 +167,7 @@ export default function RobertsBody() {
                                 <div className="leaf leaf-bottom-left-bloom"></div>
                             </div>
                             <div className="grid sub-head-v">
-                                <div className="mouth-grid mouth-droop">
+                                <div className="electric_on_body mouth-grid mouth-droop">
                                     <div className="grid sub-mouth-1"></div>
                                     <div className="grid sub-mouth-2">
                                         <div className="left-fang"></div>
@@ -187,7 +187,7 @@ export default function RobertsBody() {
                             <div className="grid sub-head-y"></div>
                         </div>
                     </div>
-                    <div className="grid subgrid-3">
+                    <div className="grid fade-in-second green_two subgrid-3">
                         <div className="activity-grid">
                             <div className="grid activity-box-title">
                                 <h3>PLACEHOLDER</h3>
@@ -197,21 +197,21 @@ export default function RobertsBody() {
                             </div>
                         </div>
                     </div>
-                    <div className="grid subgrid-4"></div>
+                    <div className="grid fade-in-second green_three subgrid-4"></div>
                     <div className="grid subgrid-5">
                         <div className="planter-body-grid">
                             <div className="grid sub-planter-body-1"></div>
-                            <div className="grid sub-planter-body-2">
+                            <div className="grid electric_on_body sub-planter-body-2">
                                 <div className="plant-stem pulsate-fwd"></div>
                             </div>
                             <div className="grid sub-planter-body-3"></div>
-                            <div className="grid sub-planter-body-4">
-                                <div className="plant-leaf leaf-twitch"></div>
+                            <div className="grid sub-planter-body-4 fade-in-fourth">
+                                <div className="electric_on_body plant-leaf leaf-twitch"></div>
                             </div>
                             <div className="grid sub-planter-body-5"></div>
                         </div>
                     </div>
-                    <div className="grid subgrid-6">
+                    <div className="grid green_four fade-in-second subgrid-6">
                         <div className="activity-grid">
                             <div className="grid activity-box-title">
                                 <h3>PLACEHOLDER</h3>
@@ -221,20 +221,20 @@ export default function RobertsBody() {
                             </div>
                         </div>
                     </div>
-                    <div className="grid subgrid-7"></div>
-                    <div className="grid subgrid-8">
+                    <div className="grid fade-in-second green_five subgrid-7"></div>
+                    <div className="grid fade-in-third subgrid-8">
                         <div className="planter-grid">
                             <div className="grid sub-planter-1"></div>
                             <div className="grid sub-planter-2">
-                                <div className="plant-holder-top"></div>
+                                <div className="electric_on_body plant-holder-top"></div>
                             </div>
                             <div className="grid sub-planter-3"></div>
                             <div className="grid sub-planter-4">
-                                <div className="plant-holder-base"></div>
+                                <div className="electric_on_body plant-holder-base"></div>
                             </div>
                         </div>
                     </div>
-                    <div className="grid subgrid-9">
+                    <div className="grid fade-in-second green_six subgrid-9">
                         <div className="activity-grid">
                             <div className="grid activity-box-title">
                                 <h3>PLACEHOLDER</h3>
