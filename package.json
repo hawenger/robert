@@ -11,8 +11,7 @@
     "heroku-postbuild": "npm run build",
     "client": "npm run start --prefix client",
     "server": "nodemon server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev"
   },
   "keywords": [],
   "author": "Hannah Wenger",
