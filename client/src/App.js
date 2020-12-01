@@ -15,12 +15,11 @@ function App(props) {
       <StoreProvider>
         <Router>
           <Switch>
-            <Route path="/" exact componenet={Home}/>
-            <Route path="/world" componenet={World}/>
-            <Route path="/aboutrobert" exact componenet={AboutRobert}/>
+            <Route path="/world" component={World}/>
+            <Route path="/aboutrobert" exact component={AboutRobert}/>
+            <Route path="/" exact component={Home}/>
           </Switch>
         </Router>
-        <Home {...props} />
       </StoreProvider>  
     </div>
   );
