@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import "./App.css";
 import "./Robert.css";
 import robertService from './services/robertService';
@@ -18,7 +18,7 @@ function App(props) {
 
   let currentId= "1234";
   let possibleUsers= [];
-
+  
   const getUsers = async () => {
     let res = await robertService.getAllUser();
     possibleUsers = res.filter(element => element.userId === currentId);
