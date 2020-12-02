@@ -12,7 +12,7 @@ export default function World() {
         <a-entity id="Dust" position="0 2.25 -15" particle-system="color: #EF0000,#44CC00; preset: dust"></a-entity>
         
         <a-entity id="moon" position="-100.78426 89.84657 -215.78403" geometry="primitive: sphere" material="color: #f5fffa; metalness: 0.13; src: https://aframe.io/sample-assets/assets/images/space/moon_1024.jpg" scale="15 15 15"></a-entity>
-        <a-plane id="ground" position="0 0 0" geometry="height: 500; width: 500" rotation="-90 0 0" color="#d3d9de" material="color: #033e7c"></a-plane>
+        <a-plane id="ground" position="0 0 0" geometry="height: 500; width: 500" rotation="-90 0 0"></a-plane>
         <a-entity id="text" position= "-4 4.8 -12" scale="0.6 1.2 1" text-geometry="bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; height: 0.5; size: 1.5; value: HELLO WORLD" material="color: pink; metalness: 0.9; roughness: 0.05; sphericalEnvMap: https: //aframe.io/sample-assets/assets/images/envmap/envmap.png"></a-entity>
         
         <a-entity id="mountain" position="-28.733 0 -24" geometry="primitive: cone" scale="20 20 20" material="shader: flat; color: #2b9f23; wireframe: true"></a-entity>
