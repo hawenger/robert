@@ -1,4 +1,5 @@
 import React from 'react'
+import './Awake.css'
 
 export default function EyeballControls(props) {
     if (props.awake !== true) 
@@ -11,8 +12,8 @@ export default function EyeballControls(props) {
     )
     return (
         <div className="awake-eyeball">
-            <div className="awake-eyelid">
-                <div className="awake-pupil"></div>
+            <div className="awake-blink awake-eyelid">
+                <div className="awake-pupil-controls awake-pupil"></div>
             </div>
         </div>
     )
