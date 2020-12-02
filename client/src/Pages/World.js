@@ -1,6 +1,23 @@
-import React from 'react'
+import React, {useRef} from 'react'
+import {RiMarkov} from 'rita'
 
 export default function World() {
+    let sentences;
+    
+    function generateMarkov() {
+       let rm = new RiMarkov( 3, true, true);
+        rm.loadText(`If I have no ears, do I hear music? I am Robert, hear me roar. Hello my apple friend.`)
+        sentences = rm.generateSentence(1);
+    }
+
+    const peachCan = useRef();
+
+    const onCanClick = () => {
+        generateMarkov();
+        let line = new SpeechSynthesisUtterance();
+        line.text = sentences;
+        window.speechSynthesis.speak(line);
+    }
     return (
     <a-scene>
         <a-assets>
@@ -34,7 +51,7 @@ export default function World() {
         <a-entity light="color: #fdfdfc; intensity: 1.5; type: directional" position="-20 84.24089 63.39284" id="lightTextA"></a-entity>
         <a-entity light="color: #fdfdfc; intensity: 1.5; type: directional" position="20 84.24089 63.39284" id="lightTextB"></a-entity>
 
-        <a-entity geometry="primitive: cylinder" scale="0.5 1 1" position="0 1 -5" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="peaches" rotation="0 180 0"></a-entity>
+        <a-entity ref={peachCan} onClick={onCanClick} geometry="primitive: cylinder" scale="0.5 1 1" position="0 1 -5" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="peaches" rotation="0 180 0"></a-entity>
     </a-scene>
     )
 }
