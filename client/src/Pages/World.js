@@ -1,23 +1,11 @@
 import React, {useRef} from 'react'
-import {RiMarkov} from 'rita'
+//import {RiMarkov} from 'rita'
+import SwanSong from '../components/SongComponents/SwanSong';
+import LyricalMiracle from '../components/SongComponents/LyricalMiracle';
+//import * as Tone from 'tone';
 
 export default function World() {
-    let sentences;
-    
-    function generateMarkov() {
-       let rm = new RiMarkov( 3, true, true);
-        rm.loadText(`If I have no ears, do I hear music? I am Robert, hear me roar. Hello my apple friend.`)
-        sentences = rm.generateSentence(1);
-    }
 
-    const peachCan = useRef();
-
-    const onCanClick = () => {
-        generateMarkov();
-        let line = new SpeechSynthesisUtterance();
-        line.text = sentences;
-        window.speechSynthesis.speak(line);
-    }
     return (
     <a-scene>
         <a-assets>
@@ -27,8 +15,7 @@ export default function World() {
             <a-cursor></a-cursor>
         </a-camera>
         <a-entity id="Dust" position="0 2.25 -15" particle-system="color: #EF0000,#44CC00; preset: dust"></a-entity>
-        
-        <a-entity id="moon" position="-100.78426 89.84657 -215.78403" geometry="primitive: sphere" material="color: #f5fffa; metalness: 0.13; src: https://aframe.io/sample-assets/assets/images/space/moon_1024.jpg" scale="15 15 15"></a-entity>
+        <LyricalMiracle/>
         <a-plane id="ground" position="0 0 0" geometry="height: 500; width: 500" rotation="-90 0 0"></a-plane>
         <a-entity id="text" position= "-4 4.8 -12" scale="0.6 1.2 1" text-geometry="bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; height: 0.5; size: 1.5; value: HELLO WORLD" material="color: pink; metalness: 0.9; roughness: 0.05; sphericalEnvMap: https: //aframe.io/sample-assets/assets/images/envmap/envmap.png"></a-entity>
         
@@ -50,8 +37,7 @@ export default function World() {
         <a-entity light="color: #fdfdfc; intensity: 1.5; type: point; penumbra: 1; target: #moon" position="-105.63312 84.24089 63.39284" id="moonlight"></a-entity>
         <a-entity light="color: #fdfdfc; intensity: 1.5; type: directional" position="-20 84.24089 63.39284" id="lightTextA"></a-entity>
         <a-entity light="color: #fdfdfc; intensity: 1.5; type: directional" position="20 84.24089 63.39284" id="lightTextB"></a-entity>
-
-        <a-entity ref={peachCan} onClick={onCanClick} geometry="primitive: cylinder" scale="0.5 1 1" position="0 1 -5" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="peaches" rotation="0 180 0"></a-entity>
+        <SwanSong/>
     </a-scene>
     )
 }
