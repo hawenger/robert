@@ -5,7 +5,6 @@ import RobertSpeech from '../components/RobertSpeech';
 import RobertsBody from '../components/RobertsBodyComponents/RobertsBody';
 
 
-
 export default function Home(props) {
 
 let robertsCookie;
