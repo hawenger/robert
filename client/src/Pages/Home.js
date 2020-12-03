@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
 import "../Robert.css";
-import robertService from '../services/robertService';
 import RobertSpeech from '../components/RobertSpeech';
 import RobertsBody from '../components/RobertsBodyComponents/RobertsBody';
 
@@ -34,7 +33,7 @@ function writeCookie() {
     
 function readCookie() {
     let currentCookie = document.cookie;
-    if(currentCookie == "") {
+    if(currentCookie === "") {
         console.log("hello")
         writeCookie();
         console.log(document.cookie);

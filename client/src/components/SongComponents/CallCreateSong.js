@@ -1,7 +1,5 @@
 import React from 'react'
 import { useStoreContext } from "../../services/GlobalState";
-import { SET_ROBERT_MOOD_RETURNING, DISPLAY_OBJECT, HIDE } from "../../services/actions";
-import robertService from '../../services/robertService'; 
 import * as Tone from 'tone';
 
 export default function CallCreateSong(props) {
@@ -151,8 +149,6 @@ export default function CallCreateSong(props) {
         finalSynthCall();
     }
     
-    let randomSongTitle= "Midnight in Rhapsody"
-
     const [state, dispatch] = useStoreContext();
     
     //Call API to get all moods
@@ -244,7 +240,7 @@ export default function CallCreateSong(props) {
 
     return (
         <>
-            <button className="actionbtn" style={state.display} onClick={playASong}><i style={{color:'#ff352e', fontSize:'5em', textShadow: '1px 2px 0px #010000'}} class="fa fa-headphones" aria-hidden="true"></i></button>
+            <button className="actionbtn" style={state.display} onClick={playASong}><i style={{color:'rgba(255, 53, 46, 0.46)', fontSize:'5em', textShadow: '1px 2px 0px #010000'}} class="fa fa-headphones" aria-hidden="true"></i></button>
         </>
     )
     }

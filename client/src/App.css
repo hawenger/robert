@@ -1,26 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-size-adjust: auto;
+  overflow-wrap: break-word;
+}
+
 #root {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  width: 100%;
-  background-color:#010000;
+  width: 100vw;
+  background-color: #010000;
   font-family: 'Questrial', sans-serif;
   color: #66FF66;
 }
 .wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr;
-  grid-template-rows: 4fr 4fr 1fr 1fr;
-  width: 100%;
   min-height: 100vh;
-  max-width: 70em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
 }
 .RobertContainer {
   display: grid;
-  width: 100%;
   grid-column: span 2;
   grid-row: span 2;
+  max-width: 33em;
+  min-width: 33em;
 }
 
 .SpeechContainer {
@@ -72,14 +82,12 @@
   cursor: pointer;
 }
 .actionbtn:hover {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2em;
-  margin-top: 2em;
-  border: none;
-  background: transparent;
-  font-size: 1em;
+  font-size: .8em;
+  color:rgba(255, 53, 46, 0.46);
+}
+
+.actionbtn:active {
+  color:#ff352e;
 }
 
 .DisplayBox {
@@ -100,17 +108,10 @@
   flex-direction: column;
 }
 .WakeButton {
-  margin-top: 2em;
-  align-items: center;
-  justify-content: center;
-  grid-column: span 2;
-  transition: linear 0.04s;
-  border: none;
-  box-shadow: 5px -3px 17px 0px #8B0C14, 3px -4px 17px 0px #d57373, 2px -2px 17px 0px #3a040b;
-  cursor: pointer;
+  position: absolute;
   font-size: 1.5rem;
   border-radius: 1em;
-  padding: 0 3.5rem 0 3.5rem;
+  padding: .4em 3em;
   color: #010000;
   text-shadow: 0px 0px 4px #8d0c14, 0px 0px 4px #e76d6d;
   background: transparent;
@@ -119,10 +120,11 @@
   transition: linear 0.2s;
 }
 .WakeButton:hover {
-  transform: translate(-8px, 2%);
+  cursor: pointer;
+  transform: translate(-2px, 2%);
   box-shadow: 0px 10px 2px 5px black;
   text-shadow: 0px 0px 4px #8d0c14, 0px 0px 4px #e76d6d, 0px 0px 4px #fff6f6;
-  font-size: 1.8rem;
+  border-color: white;
   
 }
 .EmptyDiv-1 {

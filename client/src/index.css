@@ -5,6 +5,7 @@ body {
 }
 
 /*Animations*/
+
 .green_one {
   -webkit-animation: green_one linear 3s 1 both;
   animation: green_one linear 3s 1 both;

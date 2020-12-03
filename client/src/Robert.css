@@ -263,7 +263,7 @@ justify-content: space-evenly;
 .awake-eyelid {
     height: 2.5em;
     width: 3.5em;
-    background-color: white;
+    background-color: rgb(255 255 255 / 84%);
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
     border-top: .5em solid#3F0507;

@@ -129,14 +129,14 @@ const peachCan = useRef();
         let letterArray=[];
         
         function randomScale() {
-                    for(var i=0; i < 10; i++); {
-                        x = (Math.floor(Math.random() * 4) + 2);
-                        y = (Math.floor(Math.random() * 4) + 2);
-                        z = (Math.floor(Math.random() * 4) + 2);
-                        a = (Math.floor(Math.random() * 4) + 2);
-                        b = (Math.floor(Math.random() * 4) + 2);
-                        c = (Math.floor(Math.random() * 5) + 1);
-                    }
+            for(var i=0; i < 10; i++); {
+                x = (Math.floor(Math.random() * 4) + 2);
+                y = (Math.floor(Math.random() * 4) + 2);
+                z = (Math.floor(Math.random() * 4) + 2);
+                a = (Math.floor(Math.random() * 4) + 2);
+                b = (Math.floor(Math.random() * 4) + 2);
+                c = (Math.floor(Math.random() * 5) + 1);
+            }
             letterArray.push(x,y,z,a,b,c);
             //console.log(letterArray);    
         };
@@ -241,7 +241,7 @@ const peachCan = useRef();
         };
     return (
         <>
-            <a-entity ref={peachCan} onClick={playASong} geometry="primitive: cylinder" scale="0.5 1 1" position="0 1 -5" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="peaches" rotation="0 180 0"></a-entity>
+            <a-entity ref={peachCan} onClick={playASong} geometry="primitive: cylinder; radius: 0.8" scale="0.5 1 1" position="0 1 -5" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="peaches" rotation="0 180 0"></a-entity>
         </>
     )
 }
