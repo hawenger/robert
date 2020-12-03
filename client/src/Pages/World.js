@@ -2,10 +2,10 @@ import React from 'react'
 //import {RiMarkov} from 'rita'
 import SwanSong from '../components/SongComponents/SwanSong';
 import LyricalMiracle from '../components/SongComponents/LyricalMiracle';
+import HomeNav from '../components/NavigationComponent/HomeNav';
 //import * as Tone from 'tone';
 
 export default function World() {
-
     return (
     <a-scene>
         <a-assets>
@@ -17,6 +17,7 @@ export default function World() {
             <img id="fishImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/blue-water-bubbles-frank-tschakert.jpg"></img>
             <img id="strawberryImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://i.pinimg.com/originals/bc/d1/11/bcd1116aa32c8768e66525d4f6148dcf.jpg"></img>
             <img id="strawberryTopImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://heattransfervinyl4u.com/image/cache/catalog/Patterns/Green%20leaf%20Pattern%20main-800x800.jpg"></img>
+            <img id="homeThumbnail" crossOrigin="anonymous" preload="auto" src="../components/AframeAssets/images/homepage.png"></img>
         </a-assets>
         <a-camera camera="" position="0 3 5" rotation="11.000789666511789 9.396507840145324 0">
             <a-cursor></a-cursor>
@@ -24,7 +25,8 @@ export default function World() {
         <a-entity id="Dust" position="0 2.25 -15" particle-system="color: #EF0000,#44CC00; preset: dust"></a-entity>
         <LyricalMiracle/>
         
-        
+        <a-entity id="NavPortal" rotation="-5.276242544228801 0 0" position="-6.12 1.798 -15.73"link="href: /; title: EXIT; visualAspectEnabled: true; backgroundColor: #885959; highlighted: true; image: #homeThumbnail; peekMode: true; titleColor: #f21818" material="" geometry="primitive: torus; radius: 10; radiusTubular: 3"><a href="/">HOME</a><a-entity text="color: white; align: center; font: kelsonsans; value: EXIT; width: 4" position="0 1.5 0"></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; side: back" visible="false"></a-entity><a-entity text="color: white; align: center; font: kelsonsans; value: EXIT; width: 5" position="0 1.5 0" rotation=""></a-entity><a-entity geometry="primitive: sphere; segmentsWidth: 64; segmentsHeight: 64; phiLength: 180; thetaLength: 360" material="shader: portal; borderEnabled: 0; side: back" rotation="0 180 0" position="" visible="false"></a-entity><a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" material="shader: portal; borderEnabled: 0; side: back" visible="false"></a-entity></a-entity>
+     
         <a-entity id="ocean" position="0 -2 -25" ocean="density: 50; width: 200; depth: 200; speed: 2" src="#oceanImg" material="color: #1f2d32; opacity: 0.75; roughness: 1; displacementBias: 0.51; emissive: #010304; blending: additive" rotation="-90 0 0"></a-entity>
         <a-plane src="#groundImg" id="oceanFloor" wireframelinewidth="0" repeat="50 50" position="0 -20 -25" geometry="primitive: circle; radius: 200" rotation="-90 0 0" material="color: #000000; emissive: #000000; flatShading: true; metalness: 1; roughness: 0.9" visible=""></a-plane>
         
