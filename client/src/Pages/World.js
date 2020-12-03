@@ -14,6 +14,9 @@ export default function World() {
             <img id="groundImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://files.123freevectors.com/wp-content/uploads/new/pattern/147-water-pattern-vector-free.png"></img>
             <img id="oceanImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://files.123freevectors.com/wp-content/uploads/new/pattern/147-water-pattern-vector-free.png"></img>
             <img id="skyImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://aframe.io/sample-assets/assets/images/space/earth_clouds_2048.png"></img>
+            <img id="fishImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/blue-water-bubbles-frank-tschakert.jpg"></img>
+            <img id="strawberryImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://i.pinimg.com/originals/bc/d1/11/bcd1116aa32c8768e66525d4f6148dcf.jpg"></img>
+            <img id="strawberryTopImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://heattransfervinyl4u.com/image/cache/catalog/Patterns/Green%20leaf%20Pattern%20main-800x800.jpg"></img>
         </a-assets>
         <a-camera camera="" position="0 3 5" rotation="11.000789666511789 9.396507840145324 0">
             <a-cursor></a-cursor>
@@ -32,9 +35,12 @@ export default function World() {
         <a-entity light="color: #fdfdfc; intensity: 2.5" position="-99.8987 88.1312 -214.88725" id="moonlight"></a-entity>
         <a-entity light="color: #fdfdfc; intensity: 2; target: #moon; penumbra: 1; castShadow: true" position="0 88.1312 214.88725" target="#moon" id="sun"></a-entity>
         <a-entity light="color: #000000; intensity: 0.5; type: hemisphere; groundColor: #0b1a28; penumbra: 0.8; castShadow: true" position="-99.8987 88.1312 -214.88725" id="moonLightambient" visible=""></a-entity>
-        
         <SwanSong/>
-        <a-entity geometry="primitive: cylinder; radius: 5; height: 500" scale="" position="0 -5.09776 45.18773" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="fishtube" rotation="0 180 0"></a-entity>
+        <a-entity geometry="primitive: cylinder; radius: 8; height: 500" scale="" position="0 -5.09776 100" repeat="50 50" material="color: #070b0e" id="fishtube" rotation="0 180 0"></a-entity>
+
+        <a-entity id="milkbox" position="50 80 -180" geometry="depth: 10; height: 20; width: 10" rotation="80 90 0"></a-entity>
+        <a-entity id="milkboxtop-3" position="37.235 78.88805 -176.48411" geometry="height: 10; width: 0.5; depth: 10" rotation="80 -119.99999999999999 0"></a-entity>
+        <a-entity id="milkboxtop-2" position="37.235 78.88805 -184.22219" geometry="height: 10; width: 0.5; depth: 10" rotation="80 119.99999999999999 0"></a-entity>
     </a-scene>
     )
 }
