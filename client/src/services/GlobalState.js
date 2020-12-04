@@ -6,7 +6,8 @@ import {
     RESET_ROBERT,
     DISPLAY_OBJECT,
     HIDE,
-    SHOW
+    SHOW,
+    VALIDATE_VISITOR
     //ADD_POST,
     //ADD_FAVORITE,
     //UPDATE_FAVORITES,
@@ -65,6 +66,12 @@ const reducer = (state, action) => {
       display: {display:'flex'},
       link: null
     };
+    case VALIDATE_VISITOR:
+      return {
+        ...state,
+        awake: action.awake,
+        returning: action.awake
+      };
     default:
       return state;
     }
@@ -83,7 +90,9 @@ const reducer = (state, action) => {
       linkName: null,
       title:null,
       link:null,
-      description:null
+      description:null,
+      awake:null,
+      returning: null
     });
   
     return <Provider value={[state, dispatch]} {...props} />;

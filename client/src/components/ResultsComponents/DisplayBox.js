@@ -1,15 +1,20 @@
 import React from 'react';
-import { useStoreContext} from "../../services/GlobalState";
+import { useStoreContext } from "../../services/GlobalState";
+import MessageResults  from  './MessageResults';
 
 
-export default function DisplayBox(props) {
+export default function DisplayBox() {
 
-    const [state] = useStoreContext();
-
+    const state = useStoreContext();
+    console.log(state);
+    if(state.link !== null)
     return (
         <div className="yesButtonTasks">
-            <a href={state.link}>{state.title}</a>
+            <MessageResults/>
         </div>
+    )
+    return (
+        null
     )
 
 }

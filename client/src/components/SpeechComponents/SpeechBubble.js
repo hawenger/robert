@@ -3,26 +3,26 @@ import { useStoreContext} from "../../services/GlobalState";
 import YesNoButtons from './YesNoButtons';
 import ActionButtons from '../ActionButtons';
 
-export default function SpeechBubble(props) {
+export default function SpeechBubble() {
     //SETTING STATES
     
     const [state] = useStoreContext();
 
     //Determine if user is returning thus what to render
-    if(props.returning === false) {
+    if(state.returning === false) {
         return (
             <div className="BubbleGoodies">
                 <p>{state.newUserSpeech}</p>
-                <ActionButtons {...props}/>
-                <YesNoButtons  {...props}/>
+                <ActionButtons/>
+                <YesNoButtons/>
             </div>
         )
     }
     return (
         <div className="BubbleGoodies">
             <h2>{state.speech}</h2>
-            <ActionButtons {...props} />
-            <YesNoButtons {...props} />
+            <ActionButtons/>
+            <YesNoButtons/>
         </div>
     )
 }

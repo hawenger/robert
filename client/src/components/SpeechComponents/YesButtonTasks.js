@@ -39,7 +39,7 @@ const YesButtonTasks = () => {
 };
     return (
         <>
-            <button className="yesnobtns yes-btn" onClick={YesButtonTasks}>YES</button>
+            <button className="bottom-market" onClick={YesButtonTasks}><i style={{color: 'rgba(255, 53, 46, 0.46)', fontSize:'5em', textShadow: '1px 2px 0px #010000'}} class="fa fa-smile-o" aria-hidden="true"></i></button>
         </>
     )
 }

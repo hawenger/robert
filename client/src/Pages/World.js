@@ -8,7 +8,7 @@ import Ocean from '../components/AframeScene/Ground/Ocean';
 import Clouds from '../components/AframeScene/Sky/Clouds';
 import TheSky from '../components/AframeScene/Sky/TheSky';
 import Moon from '../components/AframeScene/Sky/Moon';
-import Buttons from '../componenets/AframeScene/Sky/Buttons';
+import Buttons from '../components/AframeScene/Sky/Buttons';
 import Lights from '../components/AframeScene/Lighting/Lights';
 import Lemon from '../components/AframeScene/MiscObjects/Lemon';
 import HomeNav from '../components/NavigationComponent/HomeNav';
@@ -34,6 +34,7 @@ export default function World() {
 
         <ParticleSystem/>
         <Moon/>
+        <Buttons/>
 
         <LyricalMiracle/>
         <a-entity id="lemon" position="0 -0.84073 0" geometry="primitive: cone; height: 2; radiusBottom: 5" rotation="180 160 0" material="src: #lemonimg; flatshading: true; roughness: 1; emissive: #010000"></a-entity>
@@ -47,7 +48,7 @@ export default function World() {
         <TheSky/>
         <Clouds/>
         <SwanSong/>
-        <Buttons/>
+        
       
         
 

@@ -1,9 +1,11 @@
+/*FORMATING*/
 * {
   margin: 0;
   padding: 0;
   text-align: center;
   text-size-adjust: auto;
   overflow-wrap: break-word;
+  line-height: 1.5;
 }
 
 #root {
@@ -15,6 +17,7 @@
   background-color: #010000;
   font-family: 'Questrial', sans-serif;
   color: #66FF66;
+  overflow: overlay;
 }
 .wrapper {
   min-height: 100vh;
@@ -25,6 +28,17 @@
   flex-flow: wrap;
   align-items: center;
 }
+.EmptyDiv-1 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.EmptyDiv-2 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/*CONTAINERS*/
+
 .RobertContainer {
   display: grid;
   grid-column: span 2;
@@ -32,7 +46,6 @@
   max-width: 33em;
   min-width: 33em;
 }
-
 .SpeechContainer {
   display: grid;
   width: 100%;
@@ -44,7 +57,6 @@
   grid-template-columns: 1fr;
   grid-template-rows:  1fr, 2fr;
 }
-
 .SpeechBubble {
   background-color: transparent;
   display: flex;
@@ -53,7 +65,6 @@
   grid-row: span 1;
   grid-column: span 1;
 }
-
 .BubbleGoodies{
   display: flex;
   align-items: center;
@@ -61,35 +72,14 @@
   flex-direction: column;
   padding: 1em;
   text-align: center;
+  padding: 0em 2em 1em 2em;
 }
-
 .ActionButtonDiv {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-
-.actionbtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 2em;
-  margin-top: 2em;
-  border: none;
-  background: transparent;
-  transition: linear, 0.3s;
-  cursor: pointer;
-}
-.actionbtn:hover {
-  font-size: .8em;
-  color:rgba(255, 53, 46, 0.46);
-}
-
-.actionbtn:active {
-  color:#ff352e;
-}
-
 .DisplayBox {
   display: flex;
   align-items: center;
@@ -100,12 +90,43 @@
   grid-row: span 2;
   border-radius: 2em;
 }
-
 .DisplayDiv {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.YesNoButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*BUTTONS*/
+.bottom-market {
+display: flex;
+align-items: center;
+justify-content: center ;
+font-family: 'Courier New', Courier, monospace;
+font-size: 1em;
+font-weight: 500;
+text-decoration: none;
+text-decoration: none;
+margin: 1.6em;
+border: none;
+background: transparent;
+transition: linear, 0.3s;
+cursor: pointer;
+}
+.bottom-market:hover {
+  font-size: .8em;
+  cursor: pointer;
+  color: rgba(255, 53, 46, 0.46);
+  font-family: 'Courier New', Courier, monospace;
+  text-decoration: underline;
+  font-weight: 600;
+  padding: 1em;
+  
 }
 .WakeButton {
   position: absolute;
@@ -127,17 +148,39 @@
   border-color: white;
   
 }
-.EmptyDiv-1 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-.EmptyDiv-2 {
-  grid-column: span 1;
-  grid-row: span 1;
-}
 .ResetButton {
   display: flex;
   align-items: center;
   justify-content: center;
   grid-column: span 2;
+}
+
+/*.yesnobtns {
+  height: 2.5em;
+  width: 6em;
+  margin-left: 4em;
+  border-radius: .3em;
+  color: #010000;
+  text-shadow: 0px 0px 4px #8d0c14, 0px 0px 4px #e76d6d;
+  background: transparent;
+  font-family: 'Questrial', sans-serif;
+  text-transform: uppercase;
+  transition: linear 0.2s;
+}
+.yesnobtns:hover {
+  cursor: pointer;
+  transform: translate(-2px, 2%);
+  box-shadow: 0px 10px 2px 5px black;
+  text-shadow: 0px 0px 4px #8d0c14, 0px 0px 4px #e76d6d, 0px 0px 4px #fff6f6;
+  border-color: white;
+  
+}
+*/
+/*TEXT*/
+
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 1em;
 }

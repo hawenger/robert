@@ -5,3 +5,4 @@ export const RESET_ROBERT = "RESET_ROBERT";
 export const HIDE = "HIDE";
 export const SHOW = "SHOW";
 export const SET_PROJECT = "SET_PROJECT";
+export const VALIDATE_VISITOR = "VALIDATE_VISITOR";

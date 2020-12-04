@@ -1,10 +1,12 @@
 import React from 'react';
 import SpeechBubble from './SpeechComponents/SpeechBubble';
 import DisplayBox from './ResultsComponents/DisplayBox';
+import { useStoreContext } from "../services/GlobalState";
 
-export default function RobertSpeech(props) {
-    console.log(props);
-    if(props.returning === null) { 
+export default function RobertSpeech() {
+    const state = useStoreContext();
+    console.log();
+    if(state[0].returning === null) { 
     return (
         <div>
             <div className="SpeechElementsContainer">
@@ -15,10 +17,10 @@ export default function RobertSpeech(props) {
     return (
         <div className="SpeechElementsContainer">
             <div className="SpeechBubble"> 
-                <SpeechBubble {...props}/>
+                <SpeechBubble/>
             </div>
             <div className="DisplayBox">
-                <DisplayBox {...props}/>
+                <DisplayBox/>
             </div>    
         </div>
     )

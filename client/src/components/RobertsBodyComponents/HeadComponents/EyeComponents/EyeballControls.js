@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import { useStoreContext } from "../../../../services/GlobalState";
 import './Awake.css'
 
-export default function EyeballControls(props) {
-    if (props.awake !== true) 
+export default function EyeballControls() {
+
+    const state = useStoreContext();
+
+    if (state[0].awake !== true) 
     return (
         <div className="electric_on_body eyeball">
             <div className="eyelid sleep-twitch">
