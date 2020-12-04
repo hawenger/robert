@@ -148,90 +148,170 @@ const peachCan = useRef();
             defineChordSequence();
             finalSynthCall();
         }
-        
-       // let randomSongTitle= "Midnight in Rhapsody"
-    
-        //const [state, dispatch] = useStoreContext();
-        
-        //Call API to get all moods
-        //const setRobertReturning = () => {
-        //    robertService.getAllMood({
-        //    })
-        //    .then(result => {
-        //      const toggleOn = true;
-        //      const toggleOff = false;
-        //      randomMood= result[Math.floor(Math.random()*result.length)];
-        //      dispatch({
-        //        type: SET_ROBERT_MOOD_RETURNING,
-        //        mood: randomMood.mood,
-        //        returningSpeech: randomMood.innerText
-        //      });
-        //      dispatch({
-        //          type: DISPLAY_OBJECT,
-        //          yesNoButtons: toggleOn,
-        //          displayButton: toggleOff
-        //        });
-        //    dispatch({
-        //        type: HIDE
-        //    });
-        //    })
-        //    .catch(err => console.log(err));
-        // };
     
         randomScale();
-        const synth = new Tone.PolySynth(Tone.Synth);
-        //const synth2 = new Tone.Synth();
-        //const synth3 = new Tone.Synth();
-        //const synth4 = new Tone.AMSynth();
-        const percussion = new Tone.MetalSynth();
-        //synth.oscillator.type = 'sine';
+
         const gain = new Tone.Gain(0.5);
+        const gain1 = new Tone.Gain(0.5);
+        const gain2 = new Tone.Gain(0.5);
         gain.toDestination();
-        synth.connect(gain);
-        //synth2.connect(gain);
-        //synth3.connect(gain);
-        percussion.connect(gain);
-        
-        //let '8n';
-    //
-        //function pickNoteLength() {
-        //    const '8n'Array=[ '8n', '12n']
-        //    '8n'='8n'Array[Math.floor(Math.random()*'8n'Array.length)]
-        //};
+
+        let synth2 = new Tone.DuoSynth({
+            voice0: {
+              oscillator: {type: 'sawtooth'},
+              envelope: {
+                attack: 0.1,
+                release: 4,
+                releaseCurve: 'linear'
+              },
+              filterEnvelope: {
+                baseFrequency: 200,
+                octaves: 2,
+                attack: 0,
+                decay: 0,
+                release: 1000
+              }
+            },
+            voice1: {
+              oscillator: {type: 'sine'},
+              envelope: {
+                attack: 0.1,
+                release: 4,
+                releaseCurve: 'linear'
+              },
+              filterEnvelope: {
+                baseFrequency: 200,
+                octaves: 2,
+                attack: 0,
+                decay: 0,
+                release: 1000
+              }
+            }
+          });
+          let synth = new Tone.DuoSynth({
+            voice0: {
+              oscillator: {type: 'sawtooth'},
+              envelope: {
+                attack: 0.1,
+                release: 4,
+                releaseCurve: 'linear'
+              },
+              filterEnvelope: {
+                baseFrequency: 200,
+                octaves: 2,
+                attack: 0,
+                decay: 0,
+                release: 1000
+              }
+            },
+            voice1: {
+              oscillator: {type: 'sine'},
+              envelope: {
+                attack: 0.1,
+                release: 4,
+                releaseCurve: 'linear'
+              },
+              filterEnvelope: {
+                baseFrequency: 200,
+                octaves: 2,
+                attack: 0,
+                decay: 0,
+                release: 1000
+              }
+            }
+          });
+
+          let envelope = {
+            attack: 0.1,
+            release: 4,
+            releaseCurve: 'linear'
+          };
+          let filterEnvelope = {
+            baseFrequency: 200,
+            octaves: 2,
+            attack: 0,
+            decay: 0,
+            release: 1000
+          };
+          
+          let synth1 = new Tone.DuoSynth({
+            voice0: {
+              oscillator: {type: 'sawtooth'},
+              envelope,
+              filterEnvelope
+            },
+            voice1: {
+              oscillator: {type: 'sine'},
+              envelope,
+              filterEnvelope
+            }
+          });
+          synth.connect(gain);
+          synth1.connect(gain1);
+          synth2.connect(gain2);
         
         let index = 0;
-        
-        Tone.Transport.scheduleRepeat(time => {
-            repeat(time);
-        
-        }, '8n');
-        
-        function repeat(time) {
-            const notes = root;
-            const notes2 = third;
-            const notes3 = sixth;
-            let note = notes[index % notes.length];
-            let note2 = notes2[index% notes2.length];
-            let note3 = notes3[index% notes3.length];
-            synth.triggerAttackRelease(note, '8n', time);
-            synth.triggerAttackRelease(note2, '8n', time);
-            synth.triggerAttackRelease(note3, '8n', time);
-            //synth.triggerAttackRelease(note, '8n', time + 4);
-            //synth.triggerAttackRelease(note2, '8n', time);
-            //synth.triggerAttackRelease(note3, '8n', time + 8);
-            //synth.triggerAttackRelease(note, '8n', time + 6);
-            //synth.triggerAttackRelease(note2, '12n', time);
-            //synth.triggerAttackRelease(note3, '8n', time);
-            //synth2.triggerAttackRelease(note2, '8n', time);
-            //synth.triggerAttackRelease(note3, '8n', time + 12);
-            //percussion.triggerAttackRelease(note, '8n', time);
-            index ++;
-        }
     
+
+        //let rootPartEight=new Tone.part(function(time, event) {
+        //    const notes = root;
+        //    let note = notes[index% notes.length];
+        //    synth.triggerAttackRelease(note, '8n', time);
+        //    index++;
+        //});
+        //let rootPartQuarter = new Tone.part(function(time, event) {
+        //    const notes = root;
+        //    let note = notes[index% notes.length];
+        //    synth.triggerAttackRelease(note, '8n', time);
+        //    index++;
+        //});
+        //let thirdPartEight=new Tone.part(function(time, event) {
+        //    const notes = root;
+        //    let note = notes[index% notes.length];
+        //    synth.triggerAttackRelease(note, '8n', time);
+        //    index++;
+        //});
+        //let thirdPartQuarter = new Tone.part(function(time, event) {
+        //    const notes = root;
+        //    let note = notes[index% notes.length];
+        //    synth.triggerAttackRelease(note, '8n', time);
+        //    index++;
+        //});
+        //let sixthPartEight=new Tone.part(function(time, event) {
+        //    const notes = root;
+        //    let note = notes[index% notes.length];
+        //    synth.triggerAttackRelease(note, '8n', time);
+        //    index++;
+        //});
+        //let sixthPartQuarter = new Tone.part(function(time, event) {
+        //    const notes = root;
+        //    let note = notes[index% notes.length];
+        //    synth.triggerAttackRelease(note, '8n', time);
+        //    index++;
+        //});
+
+        new Tone.Loop(time => {
+            const notes = root;
+            let note = notes[index% notes.length];
+            synth.triggerAttackRelease(note, '8n', time);
+            index++;
+          }, '8n').start();
+        
+        new Tone.Loop(time => {
+            const notes2 = third;
+            let note2 = notes2[index% notes2.length];
+            synth1.triggerAttackRelease(note2, '8n', time);
+            index++;
+        }, '8n').start();
+        
+        new Tone.Loop(time => {
+            const notes3 = sixth;
+            let note3 = notes3[index% notes3.length];
+            synth2.triggerAttackRelease(note3, '8n', time);
+            index++;
+        }, '8n').start();
+
         const playASong = () => {
-        //await 
-        //randomScale();
-        //pickNoteLength();
         createSong();
         Tone.start()
         Tone.Transport.start();

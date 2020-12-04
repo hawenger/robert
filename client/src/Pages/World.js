@@ -35,8 +35,8 @@ export default function World() {
         <a-sphere id="clouds" src="#skyImg" position="0.024 67.57567 -70.20451" geometry="primitive: sphere" rotation="0 0 0" color="#0ed2ec" material="color: #66d1ad; transparent: true; opacity: 0.2; shader: flat; side: double; height: 10000; width: 10000" scale="400 400 400" fog="color: #c63f3f; density: 0; type: exponential" animation="property: rotation; to: -360 -360 -360; dur: 800000; loop: true; easing: easeInQuad"></a-sphere>
         <a-sky color="#010000"></a-sky>
         <a-entity light="color: #fdfdfc; intensity: 2.5" position="-99.8987 88.1312 -214.88725" id="moonlight"></a-entity>
-        <a-entity light="color: #fdfdfc; intensity: 2; target: #moon; penumbra: 1; castShadow: true" position="0 88.1312 214.88725" target="#moon" id="sun"></a-entity>
-        <a-entity light="color: #000000; intensity: 0.5; type: hemisphere; groundColor: #0b1a28; penumbra: 0.8; castShadow: true" position="-99.8987 88.1312 -214.88725" id="moonLightambient" visible=""></a-entity>
+        <a-entity light="color: #fdfdfc; intensity: 2; target: #moon; penumbra: 1;" position="0 88.1312 214.88725" target="#moon" id="sun"></a-entity>
+        <a-entity light="color: #000000; intensity: 0.5; type: hemisphere; groundColor: #0b1a28; penumbra: 0.8;" position="-99.8987 88.1312 -214.88725" id="moonLightambient" visible=""></a-entity>
         <SwanSong/>
         <a-entity geometry="primitive: cylinder; radius: 8; height: 500" scale="" position="0 -5.09776 100" repeat="50 50" material="color: #070b0e" id="fishtube" rotation="0 180 0"></a-entity>
 
