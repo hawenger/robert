@@ -3,6 +3,7 @@ import * as Tone from 'tone';
 
 const SwanSong = () => {
 const peachCan = useRef();
+const stopButton = useRef();
         let randomMoodScale;
         let sequence1;
         let sequence2;
@@ -319,9 +320,17 @@ const peachCan = useRef();
         //    Tone.Transport.stop();
         //}, 5000);
         };
+        const stopASong = () => {
+            Tone.Transport.stop();
+        }
     return (
         <>
-            <a-entity ref={peachCan} onClick={playASong} geometry="primitive: cylinder; radius: 0.8; height: 1.6" scale="" position="0 1 -5" material="transparent: true; color: #a3d1ab; src: https://i5.walmartimages.com/asr/ae817068-04a0-4b7b-b52f-69435c4fa497_1.5aa6dd95359c7c7b2627a547d4e0e3b2.jpeg" id="peaches" rotation="0 180 0"></a-entity>
+            <a-assets>
+                <a-assets><img id="strawberry" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://i.pinimg.com/originals/bc/d1/11/bcd1116aa32c8768e66525d4f6148dcf.jpg"></img></a-assets>
+                <img id="flowers" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://mk-website-media.s3.amazonaws.com/wp-content/uploads/2018/10/18234402/Wallpaper-KH-FlowePool-Fullbloom-1-1100x1318.jpg"></img>
+            </a-assets>
+            <a-entity  ref={peachCan} onClick={playASong} id="stop" geometry="primitive: cone; height: 2; radiusBottom: 0.1; radiusTop: 1" scale="" position="1.2 0.859 -0.5" material="src: #flowers; transparent: true; color: #a3d1ab" id="stopSpeechButton" rotation="0 180 0"><a-entity id="spheretop" geometry="primitive: sphere; radius: .6" position="0 1 0" material="src: #strawberry"></a-entity></a-entity>
+            <a-entity  ref={stopButton} onClick={stopASong} id="start" geometry="primitive: cone; height: 2; radiusBottom: 0.1; radiusTop: 1" scale="" position="3.4 0.859 0" material="src: #flowers; transparent: true; color: #a3d1ab" id="startSpeechButton" rotation="0 180 0"><a-entity id="spheretop" geometry="primitive: sphere; radius: .6" position="0 1 0" material="src: #strawberry"></a-entity></a-entity>
         </>
     )
 }

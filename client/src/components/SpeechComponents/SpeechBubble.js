@@ -1,11 +1,10 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useStoreContext} from "../../services/GlobalState";
 import YesNoButtons from './YesNoButtons';
 import ActionButtons from '../ActionButtons';
 
 export default function SpeechBubble(props) {
     //SETTING STATES
-    const [newUserSpeech] = useState("Hi, I'm Robert!");
     
     const [state] = useStoreContext();
 
@@ -13,7 +12,7 @@ export default function SpeechBubble(props) {
     if(props.returning === false) {
         return (
             <div className="BubbleGoodies">
-                <h1>{newUserSpeech}</h1>
+                <p>{state.newUserSpeech}</p>
                 <ActionButtons {...props}/>
                 <YesNoButtons  {...props}/>
             </div>

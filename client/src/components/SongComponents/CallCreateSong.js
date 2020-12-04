@@ -176,61 +176,91 @@ export default function CallCreateSong(props) {
     //    .catch(err => console.log(err));
     // };
 
-    randomScale();
-    const synth = new Tone.PolySynth(Tone.Synth);
-    //const synth2 = new Tone.Synth();
-    //const synth3 = new Tone.Synth();
-    //const synth4 = new Tone.AMSynth();
-    const percussion = new Tone.MetalSynth();
-    //synth.oscillator.type = 'sine';
-    const gain = new Tone.Gain(0.5);
-    gain.toDestination();
-    synth.connect(gain);
-    //synth2.connect(gain);
-    //synth3.connect(gain);
-    percussion.connect(gain);
+    //randomScale();
+        //const synth = new Tone.PolySynth(Tone.Synth);
+        //const robert = window.speechSynthesis;
+        //const filter = new Tone.AutoFilter(4).start();
+        //const distortion = new Tone.Distortion(0.5);
+        //synth.connect(robert);
+        //synth.toDestination();
+        //let line = new SpeechSynthesisUtterance();
+        //line.text = "Hi Cutie Pants";
+        ////synth.triggerAttackRelease('A','8n');
+        //robert.speak(line);
+    //
+        //console.log(Tone);
+    //const buffer = new Tone.ToneAudioBuffer(robert.speak(line), () => //{
+	//console.log("loaded");
+    //});
+
+    //var player = new Tone.Player(robert.speak(line), function(){
+    //    //the player is now ready
+    //    const filter = new Tone.AutoFilter(4).start();
+    //    const distortion = new Tone.Distortion(0.5);
+    //    player.chain(filter, distortion, Tone.Destination);	
+    //}).toDestination();
+
+    //const synth= new Tone.FMSynth();
+    //var samplerChorus = new Tone.Chorus(30, 3, 1.25);
+    //samplerChorus.toDestination();
+    //player.connect(samplerChorus);
+
     
-    //let '8n';
-//
-    //function pickNoteLength() {
+    //const synth = new Tone.PolySynth(Tone.Synth);
+    ////const synth2 = new Tone.Synth();
+    ////const synth3 = new Tone.Synth();
+    ////const synth4 = new Tone.AMSynth();
+    //const percussion = new Tone.MetalSynth();
+    ////synth.oscillator.type = 'sine';
+    //const gain = new Tone.Gain(0.5);
+    //gain.toDestination();
+    //synth.connect(gain);
+    ////synth2.connect(gain);
+    ////synth3.connect(gain);
+    //percussion.connect(gain);
+    //
+    ////let '8n';
+////
+    ////function pickNoteLength() {
     //    const '8n'Array=[ '8n', '12n']
     //    '8n'='8n'Array[Math.floor(Math.random()*'8n'Array.length)]
     //};
     
-    let index = 0;
-    
-    Tone.Transport.scheduleRepeat(time => {
-        repeat(time);
-    
-    }, '8n');
-    
-    function repeat(time) {
-        const notes = root;
-        const notes2 = third;
-        const notes3 = sixth;
-        let note = notes[index % notes.length];
-        let note2 = notes2[index% notes2.length];
-        let note3 = notes3[index% notes3.length];
-        synth.triggerAttackRelease(note, '8n', time);
-        synth.triggerAttackRelease(note2, '8n', time);
-        synth.triggerAttackRelease(note3, '8n', time);
-        //synth.triggerAttackRelease(note, '8n', time + 4);
-        //synth.triggerAttackRelease(note2, '8n', time);
-        //synth.triggerAttackRelease(note3, '8n', time + 8);
-        //synth.triggerAttackRelease(note, '8n', time + 6);
-        //synth.triggerAttackRelease(note2, '12n', time);
-        //synth.triggerAttackRelease(note3, '8n', time);
-        //synth2.triggerAttackRelease(note2, '8n', time);
-        //synth.triggerAttackRelease(note3, '8n', time + 12);
-        //percussion.triggerAttackRelease(note, '8n', time);
-        index ++;
-    }
-
+    //let index = 0;
+    //
+    //Tone.Transport.scheduleRepeat(time => {
+    //    repeat(time);
+    //
+    //}, '8n');
+    //
+    //function repeat(time) {
+    //    const notes = root;
+    //    const notes2 = third;
+    //    const notes3 = sixth;
+    //    let note = notes[index % notes.length];
+    //    let note2 = notes2[index% notes2.length];
+    //    let note3 = notes3[index% notes3.length];
+    //    synth.triggerAttackRelease(note, '8n', time);
+    //    synth.triggerAttackRelease(note2, '8n', time);
+    //    synth.triggerAttackRelease(note3, '8n', time);
+    //    //synth.triggerAttackRelease(note, '8n', time + 4);
+    //    //synth.triggerAttackRelease(note2, '8n', time);
+    //    //synth.triggerAttackRelease(note3, '8n', time + 8);
+    //    //synth.triggerAttackRelease(note, '8n', time + 6);
+    //    //synth.triggerAttackRelease(note2, '12n', time);
+    //    //synth.triggerAttackRelease(note3, '8n', time);
+    //    //synth2.triggerAttackRelease(note2, '8n', time);
+    //    //synth.triggerAttackRelease(note3, '8n', time + 12);
+    //    //percussion.triggerAttackRelease(note, '8n', time);
+    //    index ++;
+    //}
+//
     const playASong = () => {
     //await 
     //randomScale();
     //pickNoteLength();
-    createSong();
+    //createSong();
+    //player.start();
     Tone.start()
     Tone.Transport.start();
     //setTimeout(() => {
