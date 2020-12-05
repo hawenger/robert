@@ -16,7 +16,6 @@ import HomeNav from '../components/NavigationComponent/HomeNav';
 
 export default function World() {
 
-    //egg "Egg" by joe_carrot is licensed under Creative Commons Attribution. https://skfb.ly/6uALr To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
     return (
     <a-scene loading-screen="dotsColor: red; backgroundColor: #010000">
         <a-assets>
@@ -48,11 +47,6 @@ export default function World() {
         <TheSky/>
         <Clouds/>
         <SwanSong/>
-        
-      
-        
-
-      
     </a-scene>
     )
 }
