@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import '../components/AboutRobert/Assets/CSS/AboutRobert.css';
+import GridHolder from '../components/AboutRobert/GridHolder';
+
 
 export default function AboutRobert() {
+
     return (
-        <div>
-            <h1>HIIIII</h1>
-            
-        </div>
+        <div className="scene-grid"> 
+            <GridHolder/>
+        </div>    
     )
 }
