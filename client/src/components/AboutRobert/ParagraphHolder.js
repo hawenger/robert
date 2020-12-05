@@ -7,15 +7,19 @@ export default function ParagraphHolder() {
     const art= useRef();
     const process = useRef();
     const timeline = useRef();
+    const back=useRef();
 
     const [showArt, setArt] = useState('none');
     const [showProcess, setProcess] = useState('none');
     const [showTimeline, setTimeline] = useState('none');
+    const [showBackButton, setButton] = useState('none');
+
 
 function displayArt() {
     setTimeline('none');
     setProcess('none');
     setArt('flex');
+    
     
 }
 function displayProcess() {
@@ -29,7 +33,7 @@ function displayTimeline() {
     setArt('none');
 }
 
-function back() {
+function backButtonClick() {
     setTimeline('none')
     setProcess('none');
     setArt('none');
@@ -45,14 +49,17 @@ function back() {
             </div>
             <div onClick={displayArt} const ref={art} className="Buttons">
                 <MakeArtRobert const Art={showArt} />
+            <button onClick={backButtonClick} className="bottom-market" const ref={back}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
             </div>    
-            <div const ref={process} const Process={showProcess}className="Buttons">    
-                <TheProcess/>
+            <div onClick={displayProcess} const ref={process} className="Buttons">    
+                <TheProcess const process={showProcess} />
+            <button onClick={backButtonClick} className="bottom-market" const ref={back}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
             </div>    
-            <div const timeline={timeline} const Timeline={showTimeline} className="Buttons">    
-                <Timeline/>
+            <div onClick={displayTimeline} const timeline={timeline} className="Buttons">    
+                <Timeline const timeline={showTimeline} />
+            <button onClick={backButtonClick} className="bottom-market" const ref={back}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
             </div>
-            <button className="bottom-market" const ref={back}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+            <button onClick={backButtonClick} className="bottom-market" const ref={back}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
         </>
     )
 }

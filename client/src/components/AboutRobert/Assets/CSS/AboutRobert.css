@@ -13,12 +13,12 @@
   }
   
   .scene-grid {
-    height: 100%;
-    max-width: 50em;
-    width: 60%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+  }
+
+  .scenecontainer {
+    width: 100%;
+    min-height: 100vh;
+    display: block;
   }
   
   .Buttons {
