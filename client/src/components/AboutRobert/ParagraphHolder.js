@@ -49,7 +49,6 @@ function backButtonClick() {
             </div>
             <div onClick={displayArt} const ref={art} className="Buttons">
                 <MakeArtRobert const Art={showArt} />
-            <button onClick={backButtonClick} className="bottom-market" const ref={back}><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
             </div>    
             <div onClick={displayProcess} const ref={process} className="Buttons">    
                 <TheProcess const process={showProcess} />

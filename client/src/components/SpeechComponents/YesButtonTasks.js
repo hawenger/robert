@@ -16,10 +16,12 @@ const YesButtonTasks = () => {
         const linkDisplay= true;
         const toggleOff = false;
         const toggleOn = true;
+        const checkIt = 'SURPRISE';
+        console.log(randomProject)
       randomProject= result[Math.floor(Math.random()*result.length)];
       dispatch({
         type: SET_PROJECT,
-        title: randomProject.title,
+        title: checkIt,
         link: randomProject.link,
         description: randomProject.description
       });
@@ -29,7 +31,9 @@ const YesButtonTasks = () => {
         yesNoButtons: toggleOff,
         displayButton: toggleOn,
         speech: randomProject.description,
-        link: randomProject.link
+        link: randomProject.link,
+        linkName: checkIt
+        
     });
     dispatch({
         type:  SHOW,
