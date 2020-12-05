@@ -1,9 +1,35 @@
 import React, { useRef } from 'react'
 import { useStoreContext } from "../../services/GlobalState";
-//import * as Tone from 'tone';
-//
-export default function CallCreateSong(props) {
+import { makeStyles } from '@material-ui/core/styles';
+import Popper from '@material-ui/core/Popper';
 
+const useStyles = makeStyles((theme) => ({
+    paper: {
+      border: '1px solid red',
+      borderRadius: '1em',
+      padding: theme.spacing(1),
+      backgroundColor: '#8B0C14',
+      color:'white',
+      textTransform: 'uppercase'
+    },
+  }));
+
+export default function CallCreateSong(props) {
+    const classes = useStyles();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+  
+    const handleClick = (event) => {
+      setAnchorEl(anchorEl ? null : event.currentTarget);
+    };
+    const handleClose = (event) => {
+        setAnchorEl(null);
+    }
+  
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popper' : undefined;
+  
+
+    
     //let sequence1;
     //let sequence2;
     //let sequence3;
@@ -270,7 +296,10 @@ export default function CallCreateSong(props) {
 
         return (
             <>
-                <button className="bottom-market" style={state.display} onClick={playASong}><i style={{color:'rgba(255, 53, 46, 0.46)', fontSize:'5em', textShadow: '1px 2px 0px #010000'}} className="fa fa-battery-three-quarters" aria-hidden="true"></i></button>
+                <Popper id={id} open={open} anchorEl={anchorEl}>
+                <div className={classes.paper}>Coming Soon</div>
+                </Popper>
+                <button onMouseEnter={handleClick} onMouseLeave={handleClose} className="bottom-market" style={state.display} onClick={playASong}><i style={{color:'rgba(255, 53, 46, 0.46)', fontSize:'5em', textShadow: '1px 2px 0px #010000'}} className="fa fa-battery-three-quarters" aria-hidden="true"></i></button>
             </>
         )
     }
