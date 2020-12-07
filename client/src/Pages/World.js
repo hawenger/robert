@@ -10,6 +10,7 @@ import TheSky from '../components/AframeScene/Sky/TheSky';
 import Moon from '../components/AframeScene/Sky/Moon';
 import Buttons from '../components/AframeScene/Sky/Buttons';
 import Lights from '../components/AframeScene/Lighting/Lights';
+import StartButton from '../components/AframeScene/Controls/StartButton';
 
 //import * as Tone from 'tone';
 
@@ -22,9 +23,7 @@ export default function World() {
                 <img id="dataImg" preload="auto" crossOrigin="anonymous" ></img>
                 <img id="skyImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://aframe.io/sample-assets/assets/images/space/earth_clouds_2048.png"></img>
                 <img id="strawberryImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://i.pinimg.com/originals/bc/d1/11/bcd1116aa32c8768e66525d4f6148dcf.jpg"></img>
-                <img id="strawberryTopImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://heattransfervinyl4u.com/image/cache/catalog/Patterns/Green%20leaf%20Pattern%20main-800x800.jpg"></img>
                 <img id="straw" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://www.xmple.com/wallpaper/stripes-lines-red-streaks-white-1920x1080-c2-b22222-fffff0-l2-47-66-a-90-f-1.svg"></img>
-                <img id="lemonimgsdf" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://toppng.com/uploads/preview/lemon-slices-11546987836s7311dzyys.png"></img>
                 <img id="lemonimg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://mk-website-media.s3.amazonaws.com/wp-content/uploads/2018/10/18234402/Wallpaper-KH-FlowePool-Fullbloom-1-1100x1318.jpg"></img>
             </a-assets>
             <Controls/>
@@ -39,6 +38,19 @@ export default function World() {
             <TheSky/>
             <Clouds/>
             <SwanSong/>
+            <StartButton/>
         </a-scene>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+//<a-entity id="robertpanel" position="-0.01 3 0.5" geometry="height: 4; width: 6"><a-entity id="robertwant" text__want_text="height:  4;  value:  I think Robert wants to sing you a song...perhaps try hovering over a strawberry?;  width:  4;  align:  center;  zOffset:  1"></a-entity></a-entity>
