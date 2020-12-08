@@ -6,7 +6,7 @@ import MessageResults  from  './MessageResults';
 export default function DisplayBox() {
 
     const state = useStoreContext();
-    console.log(state);
+    //console.log(state);
     if(state.link !== null)
     return (
         <div className="yesButtonTasks">

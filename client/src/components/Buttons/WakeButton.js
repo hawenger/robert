@@ -11,7 +11,7 @@ let returningStatus;
 function generateUserId() {
     let userId = new Uint32Array(1);
     window.crypto.getRandomValues(userId);
-    console.log(userId);
+    //console.log(userId);
     return userId;
 }
 
@@ -31,12 +31,12 @@ function writeCookie() {
 function readCookie() {
     let currentCookie = document.cookie;
     if(currentCookie === "") {
-        console.log("hello")
+        //console.log("hello")
         writeCookie();
-        console.log(document.cookie);
+        //console.log(document.cookie);
         returningStatus=false;
     } else {
-        console.log("welcome back")
+        //console.log("welcome back")
         returningStatus = true;
     }
 }
@@ -51,12 +51,19 @@ function readCookie() {
         returning: returningStatus
       });
   }
-  console.log(state.awake)
-
+  ////console.log(state.awake)
+  function speakRobertSpeak() {
+    if(returningStatus !== true) {
+    let robertMsg = new SpeechSynthesisUtterance();
+    robertMsg.text = "Hello, I'm Robert.  I'm an artist. Make sure your sound is on and come see what I've been working on!";
+    window.speechSynthesis.speak(robertMsg);
+    }
+  }
 
   function wakingRobert() {
     readCookie();
     wakeRobert();
+    speakRobertSpeak();
   }
 
   if(state.awake !== true) 

@@ -25,6 +25,8 @@ export default function World() {
                 <img id="strawberryImg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://i.pinimg.com/originals/bc/d1/11/bcd1116aa32c8768e66525d4f6148dcf.jpg"></img>
                 <img id="straw" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://www.xmple.com/wallpaper/stripes-lines-red-streaks-white-1920x1080-c2-b22222-fffff0-l2-47-66-a-90-f-1.svg"></img>
                 <img id="lemonimg" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://mk-website-media.s3.amazonaws.com/wp-content/uploads/2018/10/18234402/Wallpaper-KH-FlowePool-Fullbloom-1-1100x1318.jpg"></img>
+                <img id="strawberry" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://i.pinimg.com/originals/bc/d1/11/bcd1116aa32c8768e66525d4f6148dcf.jpg"></img>
+                <img id="flowers" crossOrigin="anonymous" preload="auto" src="https://cors-anywhere.herokuapp.com/https://mk-website-media.s3.amazonaws.com/wp-content/uploads/2018/10/18234402/Wallpaper-KH-FlowePool-Fullbloom-1-1100x1318.jpg"></img>
             </a-assets>
             <Controls/>
             <ParticleSystem/>

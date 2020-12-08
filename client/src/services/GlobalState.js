@@ -80,7 +80,7 @@ const reducer = (state, action) => {
   const StoreProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useReducer(reducer, {
       mood: null,
-      newUserSpeech:"Hello, I'm Robert!  I'm your new Virtual Assistant but I like to think of us more as friends. Would you like to hear more about me?",
+      newUserSpeech:"Hello, I'm Robert.  I'm your new Virtual Assistant but I'd like to think of us more as friends. Make sure your sound is on and come see what I've been working on!",
       speech:"Welcome Back",
       showLink: null,
       yesNoButtons: false,
