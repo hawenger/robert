@@ -52,6 +52,8 @@ function readCookie() {
       });
   }
   ////console.log(state.awake)
+
+  //ff new user robert introduction
   function speakRobertSpeak() {
     if(returningStatus !== true) {
     let robertMsg = new SpeechSynthesisUtterance();
