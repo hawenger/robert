@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStoreContext } from "../../services/GlobalState";
-import { VALIDATE_VISITOR} from "../../services/actions";
+import { VALIDATE_VISITOR } from "../../services/actions";
 
 export default function WakeButton() {
 
@@ -34,7 +34,7 @@ function readCookie() {
         //console.log("hello")
         writeCookie();
         //console.log(document.cookie);
-        returningStatus=false;
+        returningStatus = false;
     } else {
         //console.log("welcome back")
         returningStatus = true;
@@ -53,7 +53,7 @@ function readCookie() {
   }
   ////console.log(state.awake)
 
-  //ff new user robert introduction
+  //If new user robert introduction
   function speakRobertSpeak() {
     if(returningStatus !== true) {
     let robertMsg = new SpeechSynthesisUtterance();

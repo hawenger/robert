@@ -9,7 +9,7 @@ export default function SpeechBubble() {
     const [state] = useStoreContext();
 
     //Determine if user is returning thus what to render
-    if(state.returning === false) {
+    if(state.returning !== true) {
         return (
             <div className="BubbleGoodies">
                 <p>{state.newUserSpeech}</p>

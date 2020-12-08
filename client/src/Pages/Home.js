@@ -10,12 +10,12 @@ export default function Home(props) {
     return (
         <>
             <div className="RobertContainer">
-                <RobertsBody/>
+                <RobertsBody {...props}/>
             </div>
             <div className= "SpeechContainer">
-                <RobertSpeech/>
+                <RobertSpeech {...props}/>
             </div>
-            <WakeButton/>
+            <WakeButton {...props}/>
         </>    
 
     )
