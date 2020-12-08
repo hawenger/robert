@@ -16,7 +16,7 @@ const onButtonClick = (props) => {
     )
     return (
         <>
-            <a-entity useRef={startButton} onClick={onButtonClick} id="EXIT" position="0 1.53395 1.54408" text__click_text="height: 3; value: START; width: 2.5; align: center; zOffset: 0.15; color: #ffffff; opacity: 0.7; yOffset: 0.15" rotation="" geometry="depth: 0.2; height: 0.3" material="color: #04040b"></a-entity>
+            <a-entity useRef={startButton} onClick={onButtonClick} id="TRYIT" position="0 2.7 1.544" text__tryit_text="height: 3; value: ACTIVATE ME!; width: 2.5; align: center; zOffset: 0.15; color: #ffffff; opacity: 0.7; yOffset: 0.15" rotation="" geometry="depth: 0.2; height: 0.3" material="color: #04040b"></a-entity>
             <StartPanel show={show} />
         </>
     )
