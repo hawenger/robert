@@ -21,26 +21,26 @@
 
 #### Navigate World
 
-**Understanding Your Cursor**
+##### **Understanding Your Cursor**
 * The white circle in the middle of the screen is now your cursor.
 
-**Mobile Vs. Desktop**
+##### **Mobile Vs. Desktop**
 * MOBILE: The cursor will move as you move your phone
 * DESKTOP: Click the screen as you would a link, hold and move your mouse. This action will move the cursor.
 
-**Clicking**
+##### **Clicking**
 * Wait for the cursor to shrink in size.  
 * When the cursor returns to normal size, you have successfully clicked on the object.
 
 #### Activate Music
 
-**Activating Instrumental Music**
+##### **Activating Instrumental Music**
 * Center the white circle (your cursor) over the right **CENTER** strawberry.
 * After cursor signifies click (shrinks then grows), music should begin playing.
 
 *Music will play indefinitely until stopped by user*
 
-**Activating Vocals**
+##### **Activating Vocals**
 * Center the white circle (your cursor) over the left **CENTER** strawberry.
 * After cursor signifies click (shrinks then grows), Robert should begin singing.
 
@@ -48,13 +48,13 @@
 
 #### Stop Music
 
-**Stop Instrumental Music**
+##### **Stop Instrumental Music**
 * Center the white circle (your cursor) over the right **OUTER** strawberry.
 * After cursor signifies click (shrinks then grows), music should stop playing.
 
 *Music will play indefinitely until stopped by user*
 
-**Stop Vocals**
+##### **Stop Vocals**
 * Center the white circle (your cursor) over the left **OUTER** strawberry.
 * After cursor signifies click (shrinks then grows), Robert should stop singing.
 
@@ -79,7 +79,9 @@
 * Robert will ask user if they would like to see something else.
 
 ## About Robert & Build
+
 A-Frame, React, Node, Markov Chain for predictive speech, RiTa fed potential lyrics, Tonejs for synths, web speech API for Robert's voice, animations and Robert built from scratch with CSS.
+
 [Robert](https://vast-depths-13570.herokuapp.com/aboutrobert "About Robert")
 
 ## Credit & Contact
