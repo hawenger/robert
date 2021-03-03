@@ -84,6 +84,10 @@ A-Frame, React, Node, Markov Chain for predictive speech, RiTa fed potential lyr
 
 [More Info](https://vast-depths-13570.herokuapp.com/aboutrobert "About Robert")
 
+##License
+
+ ![Apache 2.0](/LICENSE.md)
+
 ## Credit & Contact
 
 **Hannah Wenger**
