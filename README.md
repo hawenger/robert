@@ -11,7 +11,6 @@
 ## USE
 
 ### VR World
-
 *After waking Robert*
 
 #### Enter World
@@ -20,7 +19,7 @@
 * Click on the middle button depicted as a sign.  
 * You are now entering Robert's world.
 
-#### Activate Music
+#### Navigate World
 
 **Understanding Your Cursor**
 * The white circle in the middle of the screen is now your cursor.
@@ -33,26 +32,32 @@
 * Wait for the cursor to shrink in size.  
 * When the cursor returns to normal size, you have successfully clicked on the object.
 
+#### Activate Music
+
 **Activating Instrumental Music**
 * Center the white circle (your cursor) over the right **CENTER** strawberry.
-* After cursor signifies shrinks and grows, music should begin playing.
+* After cursor signifies click (shrinks then grows), music should begin playing.
+
 *Music will play indefinitely until stopped by user*
 
 **Activating Vocals**
 * Center the white circle (your cursor) over the left **CENTER** strawberry.
-* After cursor signifies click, Robert should begin singing.
+* After cursor signifies click (shrinks then grows), Robert should begin singing.
+
 *Robert will stop singing after finishing his "song"*
 
 #### Stop Music
 
 **Stop Instrumental Music**
 * Center the white circle (your cursor) over the right **OUTER** strawberry.
-* After cursor signifies click, music should stop playing.
+* After cursor signifies click (shrinks then grows), music should stop playing.
+
 *Music will play indefinitely until stopped by user*
 
 **Stop Vocals**
 * Center the white circle (your cursor) over the left **OUTER** strawberry.
-* After cursor signifies click, Robert should stop singing.
+* After cursor signifies click (shrinks then grows), Robert should stop singing.
+
 *Robert will stop singing after finishing his "song"*
 
 #### Exit World
