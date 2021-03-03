@@ -82,7 +82,7 @@
 
 A-Frame, React, Node, Markov Chain for predictive speech, RiTa fed potential lyrics, Tonejs for synths, web speech API for Robert's voice, animations and Robert built from scratch with CSS.
 
-[Robert](https://vast-depths-13570.herokuapp.com/aboutrobert "About Robert")
+[More Info](https://vast-depths-13570.herokuapp.com/aboutrobert "About Robert")
 
 ## Credit & Contact
 
@@ -96,5 +96,5 @@ A-Frame, React, Node, Markov Chain for predictive speech, RiTa fed potential lyr
 
 **Email:** *hamecow@gmail.com*
 
-*Please feel free to reach out or connect on Spotify! Always looking for collaborators, conversation, learning opportunities and new music*
+***Please feel free to reach out or connect on Spotify! Always looking for collaborators, conversation, learning opportunities and new music***
 
