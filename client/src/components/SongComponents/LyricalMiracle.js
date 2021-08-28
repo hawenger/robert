@@ -20,21 +20,21 @@ const LyricalMiracle = () => {
         });
     }, 1000);
 
-    let speechSpeed = [0.1];
-    let speechPitch = [1.8, 2];
+    let speechSpeed = [1];
+    let speechPitch = [1];
     let pitchSpeedArray = [];
     let speechSpeedArray = [];
 
     function pickRandomPitches() {
         for (let i = 0; i < 100; i++) {
-            let randomPitch = speechPitch[Math.floor(Math.random() * speechPitch.length)];
+            let randomPitch = 1//speechPitch[Math.floor(Math.random() * speechPitch.length)];
             pitchSpeedArray.push(randomPitch);
         }
         //console.log(pitchSpeedArray);
     }
     function pickRandomSpeeds() {
         for (let i = 0; i < 100; i++) {
-            let randomSpeed = speechSpeed[Math.floor(Math.random() * speechSpeed.length)];
+            let randomSpeed = 1//speechSpeed[Math.floor(Math.random() * speechSpeed.length)];
             speechSpeedArray.push(randomSpeed);
         }
         //console.log(speechSpeedArray);
@@ -70,10 +70,10 @@ const LyricalMiracle = () => {
         let finalLine = new SpeechSynthesisUtterance();
         finalLine.text = rm.generateSentence(1);
         for (let i = 0; i < 2; i++) {
-            let pitchSpeed = pitchSpeedArray[i];
-            let speechRate = speechSpeedArray[i];
-            finalLine.rate = 0;
-            finalLine.pitch = 0;
+            let pitchSpeed = 1//pitchSpeedArray[i];
+            let speechRate = .8//speechSpeedArray[i];
+            finalLine.rate = .7;
+            finalLine.pitch = 1;
             robert.speak(finalLine);
         }
     }
@@ -84,7 +84,7 @@ const LyricalMiracle = () => {
         let chorusLine = new SpeechSynthesisUtterance();
         chorusLine.text = randomSound;
         for (let i = 0; i < 1; i++) {
-            chorusLine.rate = 0;
+            chorusLine.rate = 1.1;
             chorusLine.pitch = 1;
             robert.speak(chorusLine);
         }
