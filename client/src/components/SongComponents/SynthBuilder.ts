@@ -111,7 +111,7 @@ export interface Envelope {
   release: number;
 }
 
-interface DuoSynth {
+export interface DuoSynth {
   vibratoAmount: number;
   vibratoRate: number;
   harmonicity: number;
@@ -234,3 +234,78 @@ class EnvelopeBuilder {
     return this.envelope;
   }
 }
+
+interface Builder {
+  setPOM(): void;
+  setPOMObjects(): void;
+  addStep(): void;
+}
+
+class TestBuilder implements Builder {
+  private test: Test;
+  constructor() {
+    this.reset();
+  }
+  public reset(): void {
+    this.test = new Test();
+  }
+  public setPOM(): void {
+    this.test.parts.push("Set Pom");
+  }
+  public setPOMObjects(): void {
+    this.test.parts.push("Set POM Objects");
+  }
+  public addStep(): void {
+    this.test.steps.push({ name: "hello" });
+  }
+  public getTest(): Test {
+    const result = this.test;
+    this.reset();
+    return result;
+  }
+}
+
+class Test {
+  public parts: string[] = [];
+  public steps: object[] = [];
+  //public parts: object = {};
+
+  public listParts(): void {
+    console.log(`Test parts: ${this.parts.join(",")}\n`);
+  }
+  public listSteps(): void {
+    console.log(JSON.stringify(`${this.steps}`));
+  }
+}
+
+class Director {
+  private builder: Builder;
+
+  public setBuilder(builder: Builder): void {
+    this.builder = builder;
+  }
+
+  public buildNewTest(): void {
+    this.builder.setPOM();
+    this.builder.setPOMObjects();
+    this.builder.addStep();
+  }
+}
+
+function testController(director: Director) {
+  const builder = new TestBuilder();
+  director.setBuilder(builder);
+  const builder2 = new TestBuilder();
+  builder2.addStep();
+  builder2.addStep();
+  builder2.addStep();
+  builder2.addStep();
+  builder2.addStep();
+  builder2.addStep();
+  builder2.getTest().listSteps();
+  //director.buildNewTest();
+  //builder.getTest().listParts();
+} //
+
+const director = new Director();
+testController(director);
